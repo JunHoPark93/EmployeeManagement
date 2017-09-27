@@ -55,7 +55,7 @@
 
 <form id="frm" name="frm">
 	<input type="hidden" id="pageName" name="pageName" /> <input
-		type="hidden" id="hanq" name="hanq" value="한큐" />
+		type="hidden" id="test" name="test" value="test" />
 </form>
 
 
