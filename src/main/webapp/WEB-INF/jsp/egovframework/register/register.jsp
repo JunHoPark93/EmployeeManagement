@@ -65,11 +65,11 @@
   		    },
   		    first_name: {
   		        required: false,
-                  minlength: 5
+                  minlength: 1
   		    },
   		    last_name: {
   		        required: false,
-                  minlength: 5
+                  minlength: 1
   		    },
   		    website: {
   		        required: true,
@@ -165,8 +165,7 @@
 
 						<div class="header text-center">
 							<h3 class="title">Beauty Master Employee Register</h3>
-							<p class="category">Split a complicated flow in multiple
-								steps</p>
+							<p class="category">Enroll the employee</p>
 						</div>
 
 						<div class="content">
@@ -178,14 +177,11 @@
 
 							<div class="tab-content">
 								<div class="tab-pane" id="tab1">
-									<h5 class="text-center">Please tell us more about
-										yourself.</h5>
-
 									<div class="row">
 										<div class="col-md-3 col-md-offset-1">
 											<div class="form-group">
 												<label class="control-label">First Name</label> <input
-													class="form-control" type="text" name="first_name"
+													class="form-control" type="text" name="frst_nm"
 													required="true" placeholder="ex: Mike" />
 											</div>
 										</div>
@@ -193,7 +189,7 @@
 										<div class="col-md-3">
 											<div class="form-group">
 												<label class="control-label">Middle Name</label> <input
-													class="form-control" type="text" name="middle_name"
+													class="form-control" type="text" name="mddl_nm"
 													placeholder="ex: John" />
 											</div>
 										</div>
@@ -201,7 +197,7 @@
 										<div class="col-md-3">
 											<div class="form-group">
 												<label class="control-label">Last Name</label> <input
-													class="form-control" type="text" name="last_name"
+													class="form-control" type="text" name="last_nm"
 													required="true" placeholder="ex: Andrew" />
 											</div>
 										</div>
@@ -213,6 +209,7 @@
 											<div class="form-group">
 												<label class="control-label">Email<star>*</star></label> <input
 													class="form-control" type="text" name="email" email="true"
+													required="true"
 													placeholder="ex: hello@creative-tim.com" />
 											</div>
 										</div>
@@ -220,7 +217,7 @@
 										<div class="col-md-5">
 											<div class="form-group">
 												<label class="control-label">SSN Number<star>*</star></label> <input
-													class="form-control" type="text" name="ssn"
+													class="form-control" type="text" name="ssn_num"
 													required="true" 
 													placeholder="111-111-111" />
 											</div>
@@ -232,13 +229,13 @@
 										<div class="col-md-9 col-md-offset-1">
 											<div class="form-group">											
 												<lable>Street:</lable>
-												<input type="text" id="street-address" name="street-address" class="form-control">
+												<input type="text" id="street-address" name="street_addrs" class="form-control">
 												<lable>City:</lable>
 												<input type="text" id="city" name="city" class="form-control">
 												<lable>State:</lable>
 												<input type="text" id="state" name="state" class="form-control">
 												<lable>Zip code:</lable>
-												<input type="text" id="zip" name="zip" class="form-control">
+												<input type="text" id="zip" name="zipcode" class="form-control">
 											</div>
 										</div>
 									</div>
@@ -248,7 +245,7 @@
 											<div class="form-group">
 												<label class="control-label">Cell Phone</label> 
 												<input type="text" class="input-medium bfh-phone"
-												name="phone" 
+												name="cel_tel" required="true"
 												data-format="+1 (ddd) ddd-dddd">
 											</div>
 										</div>
@@ -260,23 +257,23 @@
 	                                            <label class="control-label">Checkboxes and radios</label>                                               
 	
                                                	<label class="radio">
-	                                                   <input type="radio" data-toggle="radio" name="optionsRadios" value="Casher" checked="">Casher
+	                                                   <input type="radio" data-toggle="radio" name="position" value="Casher" checked="">Casher
                                                	</label>
 	
                                                	<label class="radio">
-                                                   <input type="radio" data-toggle="radio" name="optionsRadios" value="Sales">Sales
+                                                   <input type="radio" data-toggle="radio" name="position" value="Sales">Sales
                                                	</label>
                                                
                                                	<label class="radio">
-                                                   <input type="radio" data-toggle="radio" name="optionsRadios" value="Warehouse">Warehouse
+                                                   <input type="radio" data-toggle="radio" name="position" value="Warehouse">Warehouse
                                                	</label>
                                                
                                               	 <label class="radio">
-                                                   <input type="radio" data-toggle="radio" name="optionsRadios" value="manager">Full-time store assistant manager 
+                                                   <input type="radio" data-toggle="radio" name="position" value="Manager">Full-time store assistant manager 
                                                	</label>
                                                
                                                	<label class="radio">
-                                                   <input type="radio" data-toggle="radio" name="optionsRadios" value="Non-store">Non-store position
+                                                   <input type="radio" data-toggle="radio" name="position" value="Non-store">Non-store position
                                                	</label>
                                                	
 	                                        </div>
@@ -318,25 +315,15 @@
 								<div class="tab-pane" id="tab2">
 									<h5 class="text-center">Please give us more details about
 										your platform.</h5>
-									<!-- <div class="row">
-										<div class="col-md-10 col-md-offset-1">
-											<div class="form-group">
-												<label class="control-label">Your Website<star>*</star></label>
-												<input class="form-control" type="text" name="website"
-													url="true" placeholder="ex: http://www.creative-tim.com" />
-											</div>
-										</div>
-									</div> -->									
-									
 									<div class="row">
 										<div class="col-md-5 col-md-offset-1">
 											<div class="form-group">
-												<label class="control-label">Working Type</label>
+												<label class="control-label">work_style</label>
 
 												<!--     IMPORTANT! - the "bootstrap select picker" is not compatible with jquery.validation.js, that's why we use the "default select" inside this wizard. We will try to contact the guys who are responsibble for the "bootstrap select picker" to find a solution. Thank you for your patience.
                                                      -->
 
-												<select name="cities" class="form-control">
+												<select class="form-control" name="work_style" required="true">
 													<option selected="" disabled="">- Select Type -</option>
 													<option value="Full Time">Full Time</option>
 													<option value="Part Time">Part Time</option>
@@ -346,12 +333,25 @@
 
 											</div>
 										</div>
-
-										<div class="col-md-5 ">
+										
+										<div class="col-md-5">
 											<div class="form-group">
-												<label class="control-label">Price</label> <input
-													class="form-control" type="text" name="price"
-													placeholder="ex: 19.00" />
+												<label class="control-label">Location</label>
+
+												<!--     IMPORTANT! - the "bootstrap select picker" is not compatible with jquery.validation.js, that's why we use the "default select" inside this wizard. We will try to contact the guys who are responsibble for the "bootstrap select picker" to find a solution. Thank you for your patience.
+                                                     -->
+
+												<select class="form-control" name="location" required="true">
+													<option selected="" disabled="">- Select Location -</option>
+													<option value="CampCreek">CampCreek</option>
+													<option value="Duluth">Duluth</option>
+													<option value="GreenBriar">GreenBriar</option>
+													<option value="HeadLand">HeadLand</option>
+													<option value="Morrow">Morrow</option>
+													<option value="OldNational">OldNational</option>
+													<option value="Riverdale">Riverdale</option>													
+												</select>
+
 											</div>
 										</div>
 
@@ -362,15 +362,24 @@
 											<div class="form-group">
 												<label class="control-label">Related</label>
 			                                    <div class="switch"
-			                                         data-on-label=""
-			                                         data-off-label="">
-			                                         <input type="checkbox" checked/>
+			                                         data-on-label="YES"
+			                                         data-off-label="NO">
+			                                         <input type="hidden" name="related" value="0"/>
+			                                         <input type="checkbox" name="related" value="1"/>			                                         
 			                                    </div>
+			                            
+											</div>
+		                                </div>
+		                                <div class="col-md-4">
+											<div class="form-group">
+												<label class="control-label">At least 18</label>
 			                                    <div class="switch"
-			                                         data-on-label=""
-			                                         data-off-label="">
-			                                         <input type="checkbox"/>
+			                                         data-on-label="YES"
+			                                         data-off-label="NO">
+			                                         <input type="hidden" name="adult_yn" value="0"/>
+			                                         <input type="checkbox" name="adult_yn" value="1"/>			                                         
 			                                    </div>
+			                            
 											</div>
 		                                </div>
 									</div>
@@ -379,7 +388,7 @@
 										<div class="col-md-5 col-md-offset-1">
 											<div class="form-group">
 												<label for="exampleTextarea">Skills And Experience</label>
-											    <textarea class="form-control" id="skills" rows="3"></textarea>
+											    <textarea class="form-control" name="skills" id="skills" rows="3"></textarea>
 											</div>
 										</div>
 									</div>
@@ -390,11 +399,11 @@
 	                                           	<label class="col-sm-2 control-label">High School completed</label>
 	                                           	<div class="col-sm-10">
 	                                                <label class="checkbox checkbox-inline">
-	                                                    <input type="checkbox" data-toggle="checkbox" value="option1">YES
+	                                                    <input type="checkbox" data-toggle="checkbox" name="highschool" value="option1">YES
 	                                                </label>
 	
 	                                                <label class="checkbox checkbox-inline">
-	                                                    <input type="checkbox" data-toggle="checkbox" value="option2">NO
+	                                                    <input type="checkbox" data-toggle="checkbox" name="highschool" value="option2">NO
 	                                                </label>		                                         
 	                                           	</div>
                                         	</div>
@@ -406,23 +415,23 @@
 											<div class="form-group">
 												<label class="control-label">School Name</label> <input
 													class="form-control" type="text" name="school_name"
-													required="true" placeholder="ex: Mike" />
+													placeholder="ex: XXX University, XXX college" />
 											</div>
 										</div>								
 										
 										<div class="col-md-3">
 											<div class="form-group">
 												<label class="control-label">Major</label> <input
-													class="form-control" type="text" name="last_name"
-													required="true" placeholder="ex: Andrew" />
+													class="form-control" type="text" name="major"
+													placeholder="ex: Advertising" />
 											</div>
 										</div>
 										
 										<div class="col-md-3">
 											<div class="form-group">
 												<label class="control-label">Grade</label> <input
-													class="form-control" type="text" name="last_name"
-													required="true" placeholder="ex: Andrew" />
+													class="form-control" type="text" name="grade"
+													placeholder="ex: 3.0" />
 											</div>
 										</div>
 										
@@ -485,7 +494,7 @@
 											join our community
 										</small>
 									</h2> -->
-
+									<h5 class="text-center">Work Experience</h5>
 
 									<div class="work-experience" id="work_experience1">									
 										<div class="row">
@@ -501,7 +510,7 @@
 												<div class="form-group">
 													<label class="control-label">Business Type</label> <input
 														class="form-control" type="text" name="businesss_type"
-														placeholder="ex: John" />
+														placeholder="ex: Food Mart" />
 												</div>
 											</div>
 											
@@ -509,7 +518,7 @@
 												<div class="form-group">
 													<label class="control-label">Job Title</label> <input
 														class="form-control" type="text" name="job_title"
-														required="true" placeholder="ex: Andrew" />
+														required="false" placeholder="ex: Manager" />
 												</div>
 											</div>
 											

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="egovframework.controller.register.service.impl.RegisterMapper">
+
+	<insert id="insertEmployee" parameterType="employeeVO">
+				  
+		  INSERT INTO t_employee
+		( SSN_NUM
+		  , FRST_NM
+		  , LAST_NM
+		  , MDDL_NM
+		  , STREET_ADDRS
+		  , CITY
+		  , STATE
+		  , ZIPCODE
+		  , HOME_TEL
+		  , CEL_TEL
+		  , E_MAIL
+		  , POSITION
+		  , LOCATION
+		  , RELATED_YN
+		  , WORK_STYLE
+		  , ADULT_YN
+		  , REGI_NM
+		  , MODI_NM
+		  , WORK_YN)
+		              
+		  VALUES ( "${ssn_num}"
+		  , "${frst_nm}"
+		  , "${last_nm}"
+		  , "${mddl_nm}"
+		  , "${street_addrs}"
+		  , "${city}"
+		  , "${state}"
+		  , "${zipcode}"
+		  , "${home_tel}"
+		  , "${cel_tel}"
+		  , "${e_mail}"
+		  , "${position}"
+		  , "${location}"
+		  , "${related_yn}"
+		  , "${work_style}"
+		  , "${adult_yn}"
+		  , "Jay", 
+		  "null", 
+		  "Y" )				  
+
+	</insert>
+	
+	<insert id="insertEmployeeEducation" parameterType="egovframework.controller.register.service.impl.EmployeeEducationVO">
+		INSERT INTO t_education
+		( 
+			SSN_NUM,
+			HIGH_YN,
+			EDU_CODE,
+			SCHOOL_NM,
+			STREET_ADDRS,
+			CITY,
+			STATE,
+			MAJOR,
+			DEGREE,
+			REGI_NM,
+			MODI_NM
+		)
+			
+		VALUES 
+		(
+		"${ssn_num}"
+		"${high_yn}",
+		"${edu_code}",
+		"${street_addrs}",
+		"${city}",
+		"${state}",
+		"${major}",
+		"${degree}",
+		"Jay",
+		"null"
+		)
+		
+	</insert>
+	
+	<select id="selectData" resultType="HashMap">
+		SELECT * FROM t_employee;
+	</select>
+
+
+</mapper>
