@@ -34,7 +34,7 @@
 
 <script>
 	// street api
-	var liveaddress = $.LiveAddress({
+	/* var liveaddress = $.LiveAddress({
 		key : "27443860329414224",
 		debug : false,
 		target : "US|INTERNATIONAL",
@@ -45,7 +45,7 @@
 			postal_code : '#zip',
 			country : '#country'
 		} ]
-	});
+	}); */
 </script>
 
 

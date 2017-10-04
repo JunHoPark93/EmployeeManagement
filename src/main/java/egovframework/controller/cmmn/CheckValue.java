@@ -64,4 +64,26 @@ public final class CheckValue {
 		else
 			return "99"; // error
 	}
+	
+	public static String CheckEduCode(String edu) {
+		if(edu.equals("College")) 
+			return "2";
+		else if(edu.equals("University"))
+			return "1";
+		else if(edu.equals("Business"))
+			return "3";
+		else if(edu.equals("Technical"))
+			return "4";
+		else if(edu.equals("Trade School"))
+			return "5";
+		else
+			return "9"; // error
+	}
+	
+	public static String checkHighSchool(String yn) {
+		if(yn.equals("1"))
+			return "Y";
+		else 
+			return "N";
+	}
 }

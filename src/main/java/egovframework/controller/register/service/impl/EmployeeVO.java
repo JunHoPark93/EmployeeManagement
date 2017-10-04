@@ -29,12 +29,13 @@ public class EmployeeVO {
 	private String work_style;
 	private String adult_yn;
 	private String related_yn;
+	private String skills;
 	
 	public EmployeeVO() {}
 
 	public EmployeeVO(String ssn_num, String last_nm, String frst_nm, String mddl_nm, String street_addrs, String city,
 			String state, String zipcode, String home_tel, String cel_tel, String e_mail, String position,
-			String location, String work_style, String adult_yn, String related_yn) {
+			String location, String work_style, String adult_yn, String related_yn, String skills) {
 		super();
 		this.ssn_num = ssn_num;
 		this.last_nm = last_nm;
@@ -52,7 +53,10 @@ public class EmployeeVO {
 		this.work_style = work_style;
 		this.adult_yn = adult_yn;
 		this.related_yn = related_yn;
+		this.skills = skills;
 	}
+
+
 
 	public String getSsn_num() {
 		return ssn_num;
@@ -182,12 +186,22 @@ public class EmployeeVO {
 		this.related_yn = related_yn;
 	}
 
+	public String getSkills() {
+		return skills;
+	}
+
+	public void setSkills(String skills) {
+		this.skills = skills;
+	}
+
 	@Override
 	public String toString() {
 		return "EmployeeVO [ssn_num=" + ssn_num + ", last_nm=" + last_nm + ", frst_nm=" + frst_nm + ", mddl_nm="
 				+ mddl_nm + ", street_addrs=" + street_addrs + ", city=" + city + ", state=" + state + ", zipcode="
 				+ zipcode + ", home_tel=" + home_tel + ", cel_tel=" + cel_tel + ", e_mail=" + e_mail + ", position="
 				+ position + ", location=" + location + ", work_style=" + work_style + ", adult_yn=" + adult_yn
-				+ ", related_yn=" + related_yn + "]";
+				+ ", related_yn=" + related_yn + ", skills=" + skills + "]";
 	}
+
+	
 }

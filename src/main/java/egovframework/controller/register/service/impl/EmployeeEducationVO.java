@@ -3,25 +3,23 @@ package egovframework.controller.register.service.impl;
 public class EmployeeEducationVO {
 
 	private String ssn_num;
+	private String school_nm;
 	private String high_yn;
 	private String edu_code;
-	private String street_addrs;
-	private String city;
-	private String state;
 	private String major;
-	private String degree;
+	private String grade;
 	
-	public EmployeeEducationVO(String ssn_num, String high_yn, String edu_code, String street_addrs, String city,
-			String state, String major, String degree) {
+	public EmployeeEducationVO() {}
+
+	public EmployeeEducationVO(String ssn_num, String school_nm, String high_yn, String edu_code, String major,
+			String grade) {
 		super();
 		this.ssn_num = ssn_num;
+		this.school_nm = school_nm;
 		this.high_yn = high_yn;
 		this.edu_code = edu_code;
-		this.street_addrs = street_addrs;
-		this.city = city;
-		this.state = state;
 		this.major = major;
-		this.degree = degree;
+		this.grade = grade;
 	}
 
 	public String getSsn_num() {
@@ -30,6 +28,14 @@ public class EmployeeEducationVO {
 
 	public void setSsn_num(String ssn_num) {
 		this.ssn_num = ssn_num;
+	}
+
+	public String getSchool_nm() {
+		return school_nm;
+	}
+
+	public void setSchool_nm(String school_nm) {
+		this.school_nm = school_nm;
 	}
 
 	public String getHigh_yn() {
@@ -48,30 +54,6 @@ public class EmployeeEducationVO {
 		this.edu_code = edu_code;
 	}
 
-	public String getStreet_addrs() {
-		return street_addrs;
-	}
-
-	public void setStreet_addrs(String street_addrs) {
-		this.street_addrs = street_addrs;
-	}
-
-	public String getCity() {
-		return city;
-	}
-
-	public void setCity(String city) {
-		this.city = city;
-	}
-
-	public String getState() {
-		return state;
-	}
-
-	public void setState(String state) {
-		this.state = state;
-	}
-
 	public String getMajor() {
 		return major;
 	}
@@ -80,11 +62,19 @@ public class EmployeeEducationVO {
 		this.major = major;
 	}
 
-	public String getDegree() {
-		return degree;
+	public String getGrade() {
+		return grade;
 	}
 
-	public void setDegree(String degree) {
-		this.degree = degree;
-	}	
+	public void setGrade(String grade) {
+		this.grade = grade;
+	}
+
+	@Override
+	public String toString() {
+		return "EmployeeEducationVO [ssn_num=" + ssn_num + ", school_nm=" + school_nm + ", high_yn=" + high_yn
+				+ ", edu_code=" + edu_code + ", major=" + major + ", grade=" + grade + "]";
+	}
+
+	
 }

@@ -13,45 +13,31 @@
 		
 		$("#testBtn").on('click', function(e) {
 			alert("clicked!!");
-			alert($("#wizardForm input[type='radio']:checked").val());
+			//alert($("#wizardForm input[type='radio']:checked").val());
+			//alert($("#wizardForm input[type='checkbox']:checked").val());
+
 		});
 		
-				
-		/* var regex = /^(.+?)(\d+)$/i;
-		var cloneIndex = $(".work-experience").length;
+		jQuery.LiveAddress({
+			key: "27443860329414224",
+			debug: false,
+			target: "US", // INTERNATIONAL
+			autocomplete: 5,
+			autoVerify: false,
+			addresses : [ {
+				address1 : '#street-address',
+				locality : '#city',
+				administrative_area : '#state',
+				postal_code : '#zip',
+				country : '#country'
+			} ]
+		});
 		
-		function clone() {
-			alert("cloning");
-			$(this).parents(".work-experience").clone().appendTo("body").attr("id", "work_experience"+cloneIndex)
-			.find("*")
-			.each(function() {
-				var id = this.id || "";
-	            var match = id.match(regex) || [];
-	            if (match.length == 3) {
-	                this.id = match[1] + (cloneIndex);
-	            }
-			})
-			.on('click', 'button.clone', clone)
-	        .on('click', 'button.remove', remove);
-	    
-			cloneIndex++;
-		}
-		
-		function remove(){
-		    $(this).parents(".clonedInput").remove();
-		}
-		
-		$("button .c").on("click", clone);
-
-		$("button .r").on("click", remove); */
-
 
 	});
 	
 	
 	console.log("register page entered");
-
-	//console.log($('input:radio[name=optionsRadios]:checked').val());
 	
 	
 	  $().ready(function(){
@@ -103,6 +89,8 @@
           		if(!$valid) {
           			$validator.focusInvalid();
           			return false;
+          		} else {
+          			$(".smarty-ui a").hide(); // hide smarty street check button
           		}
           	},
               onInit : function(tab, navigation, index){
@@ -148,7 +136,7 @@
 
       function onFinishWizard(){
           //here you can do something, sent the form to server via ajax and show a success message with swal
-
+			alert("zz);")
           swal("Good job!", "You clicked the finish button!", "success");
           
           //$("#wizardForm").attr("action", "complete.do");
@@ -182,6 +170,7 @@
 											<div class="form-group">
 												<label class="control-label">First Name</label> <input
 													class="form-control" type="text" name="frst_nm"
+													id="frst_nm"
 													required="true" placeholder="ex: Mike" />
 											</div>
 										</div>
@@ -198,6 +187,7 @@
 											<div class="form-group">
 												<label class="control-label">Last Name</label> <input
 													class="form-control" type="text" name="last_nm"
+													id="last_nm"
 													required="true" placeholder="ex: Andrew" />
 											</div>
 										</div>
@@ -209,6 +199,7 @@
 											<div class="form-group">
 												<label class="control-label">Email<star>*</star></label> <input
 													class="form-control" type="text" name="email" email="true"
+													id="email"
 													required="true"
 													placeholder="ex: hello@creative-tim.com" />
 											</div>
@@ -218,6 +209,7 @@
 											<div class="form-group">
 												<label class="control-label">SSN Number<star>*</star></label> <input
 													class="form-control" type="text" name="ssn_num"
+													id="ssn_num"
 													required="true" 
 													placeholder="111-111-111" />
 											</div>
@@ -246,6 +238,7 @@
 												<label class="control-label">Cell Phone</label> 
 												<input type="text" class="input-medium bfh-phone"
 												name="cel_tel" required="true"
+												id="cel_tel"
 												data-format="+1 (ddd) ddd-dddd">
 											</div>
 										</div>
@@ -254,9 +247,9 @@
 									<div class="row">
 										<div class="col-md-3 col-md-offset-1">
 											<div class="form-group">
-	                                            <label class="control-label">Checkboxes and radios</label>                                               
+	                                            <label class="control-label">Position</label>                                               
 	
-                                               	<label class="radio">
+                                               <!-- 	<label class="radio">
 	                                                   <input type="radio" data-toggle="radio" name="position" value="Casher" checked="">Casher
                                                	</label>
 	
@@ -274,7 +267,15 @@
                                                
                                                	<label class="radio">
                                                    <input type="radio" data-toggle="radio" name="position" value="Non-store">Non-store position
-                                               	</label>
+                                               	</label> -->
+												<select multiple data-title="Multiple Select" name="position" class="selectpicker" data-style="btn-info btn-fill btn-block" data-menu-style="dropdown-blue">
+	                                                <option value="Casher">Casher</option>
+	                                                <option value="Sales">Sales</option>
+	                                                <option value="Warehouse">Warehouse</option>
+	                                                <option value="Manager">Manager</option>
+	                                                <option value="Non-store">Non-store</option>
+	                                            
+	                                            </select>
                                                	
 	                                        </div>
 	                                	</div>
@@ -396,18 +397,44 @@
 									<div class="row">
 										<div class="col-md-5 col-md-offset-1">
 											<div class="form-group">
-	                                           	<label class="col-sm-2 control-label">High School completed</label>
-	                                           	<div class="col-sm-10">
-	                                                <label class="checkbox checkbox-inline">
-	                                                    <input type="checkbox" data-toggle="checkbox" name="highschool" value="option1">YES
-	                                                </label>
+	                                           <label class="control-label">High School Completed</label>
+			                                    <div class="switch"
+			                                         data-on-label="YES"
+			                                         data-off-label="NO">
+			                                         <input type="hidden" name="highschool" value="0"/>
+			                                         <input type="checkbox" name="highschool" value="1"/>			                                         
+			                                    </div>	                                         
+	                                        </div>
+                                        </div>
+									</div>
+									
+									<div class="row">
+										<div class="col-md-3 col-md-offset-1">
+											<div class="form-group">
+	                                            <label class="control-label">Education Style</label>                                               
 	
-	                                                <label class="checkbox checkbox-inline">
-	                                                    <input type="checkbox" data-toggle="checkbox" name="highschool" value="option2">NO
-	                                                </label>		                                         
-	                                           	</div>
-                                        	</div>
-										</div>
+                                               	<label class="radio">
+	                                                   <input type="radio" data-toggle="radio" name="edu_code" value="College" checked="">College
+                                               	</label>
+	
+                                               	<label class="radio">
+                                                   <input type="radio" data-toggle="radio" name="edu_code" value="University">University
+                                               	</label>
+                                               
+                                               	<label class="radio">
+                                                   <input type="radio" data-toggle="radio" name="edu_code" value="Business">Business
+                                               	</label>
+                                               
+                                              	 <label class="radio">
+                                                   <input type="radio" data-toggle="radio" name="edu_code" value="Technical">Technical 
+                                               	</label>
+                                               
+                                               	<label class="radio">
+                                                   <input type="radio" data-toggle="radio" name="edu_code" value="Trade School">Trade School
+                                               	</label>
+                                               	
+	                                        </div>
+	                                	</div>
 									</div>
 									
 									<div class="row">
@@ -509,7 +536,7 @@
 											<div class="col-md-3">
 												<div class="form-group">
 													<label class="control-label">Business Type</label> <input
-														class="form-control" type="text" name="businesss_type"
+														class="form-control" type="text" name="business_type"
 														placeholder="ex: Food Mart" />
 												</div>
 											</div>
@@ -528,11 +555,11 @@
 											<div class="col-md-9 col-md-offset-1">
 												<div class="form-group">											
 													<lable>Street:</lable>
-													<input type="text" id="street-address" name="street-address" class="form-control">
+													<input type="text" id="street-address" name="w_street_addrs" class="form-control">
 													<lable>City:</lable>
-													<input type="text" id="city" name="city" class="form-control">
+													<input type="text" id="city" name="w_city" class="form-control">
 													<lable>State:</lable>
-													<input type="text" id="state" name="state" class="form-control">				
+													<input type="text" id="state" name="w_state" class="form-control">				
 												</div>
 											</div>
 										</div>
@@ -556,7 +583,7 @@
 											<div class="col-md-5 col-md-offset-1">
 												<div class="form-group">
 													<label for="exampleTextarea">Work Performed</label>
-												    <textarea class="form-control" id="work_performed" rows="3"></textarea>
+												    <textarea class="form-control" name="work_performed" id="work_performed" rows="3"></textarea>
 												</div>
 											</div>
 										</div>
@@ -565,7 +592,7 @@
 											<div class="col-md-5 col-md-offset-1">
 												<div class="form-group">
 													<label for="exampleTextarea">Reason for Leaving</label>
-												    <textarea class="form-control" id="reason_for_leaving" rows="3"></textarea>
+												    <textarea class="form-control" name="reason_for_leaving" id="reason_for_leaving" rows="3"></textarea>
 												</div>
 											</div>
 										</div>
@@ -585,7 +612,7 @@
 							<button type="button"
 								class="btn btn-default btn-fill btn-wd btn-back pull-left">Back</button>
 
-							<button type="button"
+							<button type="button" id="next_btn"
 								class="btn btn-info btn-fill btn-wd btn-next pull-right">Next</button>
 							<button type="button"
 								class="btn btn-info btn-fill btn-wd btn-finish pull-right"
