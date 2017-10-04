@@ -21,6 +21,7 @@
 		  , RELATED_YN
 		  , WORK_STYLE
 		  , ADULT_YN
+		  , SKILLS
 		  , REGI_NM
 		  , MODI_NM
 		  , WORK_YN)
@@ -41,6 +42,7 @@
 		  , "${related_yn}"
 		  , "${work_style}"
 		  , "${adult_yn}"
+		  , "${skills}"
 		  , "Jay", 
 		  "null", 
 		  "Y" )				  
@@ -54,25 +56,20 @@
 			HIGH_YN,
 			EDU_CODE,
 			SCHOOL_NM,
-			STREET_ADDRS,
-			CITY,
-			STATE,
 			MAJOR,
-			DEGREE,
+			GRADE,
 			REGI_NM,
 			MODI_NM
 		)
 			
 		VALUES 
 		(
-		"${ssn_num}"
+		"${ssn_num}",
 		"${high_yn}",
 		"${edu_code}",
-		"${street_addrs}",
-		"${city}",
-		"${state}",
+		"${school_nm}",
 		"${major}",
-		"${degree}",
+		"${grade}",
 		"Jay",
 		"null"
 		)
