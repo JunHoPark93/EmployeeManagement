@@ -6,6 +6,7 @@ import java.util.Map;
 import org.springframework.transaction.annotation.Transactional;
 
 import egovframework.controller.register.service.impl.EmployeeEducationVO;
+import egovframework.controller.register.service.impl.EmployeeHistoryVO;
 import egovframework.controller.register.service.impl.EmployeeVO;
 
 public interface RegisterService {
@@ -17,7 +18,8 @@ public interface RegisterService {
 	List<Map> selectData() throws Exception;
 	
 	
-	void insertDataTx(EmployeeVO employeeVO, EmployeeEducationVO employeeEducationVO) throws Exception;
+	void insertDataTx(EmployeeVO employeeVO, EmployeeEducationVO employeeEducationVO,
+			EmployeeHistoryVO employeeHistoryVO) throws Exception;
 	
 	
 

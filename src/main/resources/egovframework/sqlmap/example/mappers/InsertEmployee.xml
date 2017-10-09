@@ -4,7 +4,7 @@
 
 	<insert id="insertEmployee" parameterType="employeeVO">
 				  
-		  INSERT INTO t_employee
+		  INSERT INTO T_EMPLOYEE
 		( SSN_NUM
 		  , FRST_NM
 		  , LAST_NM
@@ -50,7 +50,7 @@
 	</insert>
 	
 	<insert id="insertEmployeeEducation" parameterType="egovframework.controller.register.service.impl.EmployeeEducationVO">
-		INSERT INTO t_education
+		INSERT INTO T_EDUCATION
 		( 
 			SSN_NUM,
 			HIGH_YN,
@@ -64,16 +64,46 @@
 			
 		VALUES 
 		(
-		"${ssn_num}",
-		"${high_yn}",
-		"${edu_code}",
-		"${school_nm}",
-		"${major}",
-		"${grade}",
-		"Jay",
-		"null"
+			"${ssn_num}",
+			"${high_yn}",
+			"${edu_code}",
+			"${school_nm}",
+			"${major}",
+			"${grade}",
+			"Jay",
+			"null"
 		)
 		
+	</insert>
+	
+	<insert id="insertEmployeeHistory" parameterType="employeeHistoryVO">
+		INSERT INTO T_WORK_HIST
+		(
+			SSN_NUM,
+			EMP_NM,
+			TYPE,
+			JOB_TITLE,
+			WORK,
+			START_DT,
+			END_DT,
+			REASON,
+			REGI_NM,
+			MODI_NM
+		)
+		
+		VALUES 
+		(
+			"${ssn_num}",
+			"${emp_nm}",
+			"${type}",
+			"${job_title}",
+			"${work}",
+			#{start_dt},
+			#{end_dt},
+			"${reason}",
+			"Jay",
+			"null"
+		);
 	</insert>
 	
 	<select id="selectData" resultType="HashMap">

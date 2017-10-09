@@ -1,15 +1,19 @@
 package egovframework.controller.register.web;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.transaction.interceptor.TransactionAspectSupport;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import egovframework.controller.cmmn.CheckValue;
 import egovframework.controller.register.service.RegisterService;
 import egovframework.controller.register.service.impl.EmployeeEducationVO;
+import egovframework.controller.register.service.impl.EmployeeHistoryVO;
 import egovframework.controller.register.service.impl.EmployeeVO;
 
 @Controller
@@ -30,6 +34,9 @@ public class RegisterController {
 		
 		EmployeeVO employeeVO = new EmployeeVO(); 
 		EmployeeEducationVO employeEducationVO = new EmployeeEducationVO();
+		EmployeeHistoryVO employeeHistoryVO = new EmployeeHistoryVO();
+		
+		DateFormat df = new SimpleDateFormat("MM/dd/yyyy");
 		
 		try{
 			String frst_nm = request.getParameter("frst_nm");
@@ -41,8 +48,11 @@ public class RegisterController {
 			String city = request.getParameter("city");
 			String state = request.getParameter("state");
 			String zipcode = request.getParameter("zipcode");
-			String home_tel = "33";
+			String home_tel = request.getParameter("home_tel");
 			String cel_tel = request.getParameter("cel_tel");
+			String work_start_dt_str = request.getParameter("work_start_dt");
+			
+			Date work_start_dt = df.parse(work_start_dt_str);
 			
 			//System.out.println(request.getParameter("position"));
 			String[] arr = request.getParameterValues("position");
@@ -78,23 +88,40 @@ public class RegisterController {
 			/**
 			 *  Work Experience
 			 */
-			String employer_name = request.getParameter("employer_name");
-			String business_type = request.getParameter("business_type");
+			String emp_name = request.getParameter("emp_nm");
+			String type = request.getParameter("type");
 			String job_title = request.getParameter("job_title");
-			String w_street_addrs = request.getParameter("w_street_addrs");
-			String w_city = request.getParameter("w_city");
-			String w_state = request.getParameter("w_state");
-			String work_performed = request.getParameter("work_performed");
-			String reason_for_leaving = request.getParameter("reason_for_leaving");
+			String start_dt_str = request.getParameter("start_dt");
 			
+			
+			Date start_dt = df.parse(start_dt_str);
+			System.out.println(start_dt_str);
+			System.out.println(start_dt);
+			
+			String end_dt_str = request.getParameter("end_dt");
+			Date end_dt = df.parse(end_dt_str);
+			System.out.println(end_dt_str);
+			System.out.println(end_dt);
+			
+			String work = request.getParameter("work");
+			String reason = request.getParameter("reason");
+			
+			System.out.println("sibal " + emp_name + " " + type + "  " + job_title);
 			employeeVO = new EmployeeVO(ssn_num, last_nm, frst_nm, mddl_nm, street_addrs, 
-					city, state, zipcode, home_tel, cel_tel, e_mail, position, location, 
-					work_style, adult_yn, related_yn, skills);
+					city, state, zipcode, home_tel, cel_tel, e_mail, work_start_dt, position, 
+					location, work_style, adult_yn, related_yn, skills);
 			
 			employeEducationVO = new EmployeeEducationVO(ssn_num, school_name, high_yn, edu_code, major, grade);
 			
-			System.out.println(employeeVO.toString());
-			System.out.println(employeEducationVO.toString());
+			System.out.println(employeeHistoryVO);
+			
+			if(emp_name != null && type != null && job_title != null) {
+				System.out.println("타냐");
+				employeeHistoryVO = new EmployeeHistoryVO(ssn_num, emp_name, type, job_title, 
+						start_dt, end_dt, work, reason);
+			}
+			
+			System.out.println(employeeHistoryVO.toString());
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -104,7 +131,7 @@ public class RegisterController {
 		//registerService.insertEmployeeTx(employeeVO);
 		//registerService.insertEmployeeEducationTx(employeEducationVO);
 		
-		registerService.insertDataTx(employeeVO, employeEducationVO);
+		registerService.insertDataTx(employeeVO, employeEducationVO, employeeHistoryVO);
 		
 /*		
 		try{

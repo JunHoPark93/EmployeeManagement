@@ -12,7 +12,7 @@
 
 	<tx:advice id="txAdvice" transaction-manager="txManager">
 		<tx:attributes>
-			<tx:method name="*Tdx" rollback-for="Exception"/>
+			<tx:method name="*Tx" rollback-for="Exception"/>
 		</tx:attributes>
 	</tx:advice>
 

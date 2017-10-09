@@ -18,12 +18,12 @@
 
 		});
 		
-		jQuery.LiveAddress({
-			key: "27443860329414224",
+/* 		jQuery.LiveAddress({
+			key: "27443863863185130",
 			debug: false,
 			target: "US", // INTERNATIONAL
 			autocomplete: 5,
-			autoVerify: false,
+			autoVerify: true,
 			addresses : [ {
 				address1 : '#street-address',
 				locality : '#city',
@@ -31,7 +31,7 @@
 				postal_code : '#zip',
 				country : '#country'
 			} ]
-		});
+		}); */
 		
 
 	});
@@ -139,7 +139,6 @@
 			alert("zz);")
           swal("Good job!", "You clicked the finish button!", "success");
           
-          //$("#wizardForm").attr("action", "complete.do");
           $("#wizardForm").submit();
       }
 </script>
@@ -205,7 +204,7 @@
 											</div>
 										</div>
 										
-										<div class="col-md-5">
+										<div class="col-md-3">
 											<div class="form-group">
 												<label class="control-label">SSN Number<star>*</star></label> <input
 													class="form-control" type="text" name="ssn_num"
@@ -221,11 +220,27 @@
 										<div class="col-md-9 col-md-offset-1">
 											<div class="form-group">											
 												<lable>Street:</lable>
-												<input type="text" id="street-address" name="street_addrs" class="form-control">
+												<input type="text" id="street-address" name="street_addrs" class="form-control">											
+											</div>
+										</div>
+									</div>
+									
+									<div class="row">
+										<div class="col-md-3 col-md-offset-1">
+											<div class="form-group">
 												<lable>City:</lable>
 												<input type="text" id="city" name="city" class="form-control">
+												
+											</div>
+										</div>
+										<div class="col-md-3">
+											<div class="form-group">
 												<lable>State:</lable>
-												<input type="text" id="state" name="state" class="form-control">
+												<input type="text" id="state" name="state" class="form-control">												
+											</div>
+										</div>
+										<div class="col-md-3">
+											<div class="form-group">
 												<lable>Zip code:</lable>
 												<input type="text" id="zip" name="zipcode" class="form-control">
 											</div>
@@ -242,6 +257,15 @@
 												data-format="+1 (ddd) ddd-dddd">
 											</div>
 										</div>
+										<div class="col-md-3">
+											<div class="form-group">
+												<label class="control-label">Home Tel</label>
+												<input type="text" class="input-medium bfh-phone"
+												name="home_tel"
+												id="home_tel"
+												data-format="+1 (ddd) ddd-dddd">
+											</div>
+										</div>
 									</div>
 									
 									<div class="row">
@@ -249,65 +273,26 @@
 											<div class="form-group">
 	                                            <label class="control-label">Position</label>                                               
 	
-                                               <!-- 	<label class="radio">
-	                                                   <input type="radio" data-toggle="radio" name="position" value="Casher" checked="">Casher
-                                               	</label>
-	
-                                               	<label class="radio">
-                                                   <input type="radio" data-toggle="radio" name="position" value="Sales">Sales
-                                               	</label>
-                                               
-                                               	<label class="radio">
-                                                   <input type="radio" data-toggle="radio" name="position" value="Warehouse">Warehouse
-                                               	</label>
-                                               
-                                              	 <label class="radio">
-                                                   <input type="radio" data-toggle="radio" name="position" value="Manager">Full-time store assistant manager 
-                                               	</label>
-                                               
-                                               	<label class="radio">
-                                                   <input type="radio" data-toggle="radio" name="position" value="Non-store">Non-store position
-                                               	</label> -->
-												<select multiple data-title="Multiple Select" name="position" class="selectpicker" data-style="btn-info btn-fill btn-block" data-menu-style="dropdown-blue">
-	                                                <option value="Casher">Casher</option>
-	                                                <option value="Sales">Sales</option>
-	                                                <option value="Warehouse">Warehouse</option>
-	                                                <option value="Manager">Manager</option>
-	                                                <option value="Non-store">Non-store</option>
-	                                            
-	                                            </select>
-                                               	
+													<select multiple data-title="Multiple Select" name="position" class="selectpicker" data-style="btn-info btn-fill btn-block" data-menu-style="dropdown-blue">
+		                                                <option value="Casher">Casher</option>
+		                                                <option value="Sales">Sales</option>
+		                                                <option value="Warehouse">Warehouse</option>
+		                                                <option value="Manager">Manager</option>
+		                                                <option value="Non-store">Non-store</option>
+		                                            
+		                                            </select>
+                                            	
 	                                        </div>
-	                                	</div>
+	                             	    </div>           
+	                                        	                                        	                                	
+	                                	<div class="col-md-4 col-md-offset-2">
+											<div class="form-group">
+												<label class="control-label">Work Start Date</label>
+												<input type="text" class="form-control datepicker" name="work_start_dt" placeholder="Date Picker Here"/>
+											</div>
+										</div>
 									</div>
-									
-									<!-- <div class="row">
-										<div class="col-sm-10">
-									  		<div class="form-group">
-		                                    	<label class="col-sm-2 control-label">Position</label>		                                          
-	                                               <label class="radio">
-	                                                   <input type="radio" data-toggle="radio" name="optionsRadios" value="option1" checked="">Casher
-	                                               </label>
-		
-	                                               <label class="radio">
-	                                                   <input type="radio" data-toggle="radio" name="optionsRadios" value="option2">Sales
-	                                               </label>
-	                                               
-	                                               <label class="radio">
-	                                                   <input type="radio" data-toggle="radio" name="optionsRadios" value="option2">Warehouse
-	                                               </label>
-	                                               
-	                                               <label class="radio">
-	                                                   <input type="radio" data-toggle="radio" name="optionsRadios" value="option2">Full-time store assistant manager 
-	                                               </label>
-	                                               
-	                                               <label class="radio">
-	                                                   <input type="radio" data-toggle="radio" name="optionsRadios" value="option2">Non-store position
-	                                               </label>
-		                                     </div>
-		                                </div>
-	                                </div>     --> 
-	                                
+															                                
 	                                <button type="button" class="btn btn-primary" id="testBtn">TestBtn</button>                          
 								</div> <!-- end of tab1 -->
 								
@@ -527,8 +512,8 @@
 										<div class="row">
 											<div class="col-md-3 col-md-offset-1">
 												<div class="form-group">
-													<label class="control-label">Employer Name</label> <input
-														class="form-control" type="text" name="employer_name"
+													<label class="control-label">Company Name</label> <input
+														class="form-control" type="text" name="emp_nm"
 														placeholder="ex: Mike" />
 												</div>
 											</div>
@@ -536,7 +521,7 @@
 											<div class="col-md-3">
 												<div class="form-group">
 													<label class="control-label">Business Type</label> <input
-														class="form-control" type="text" name="business_type"
+														class="form-control" type="text" name="type"
 														placeholder="ex: Food Mart" />
 												</div>
 											</div>
@@ -551,7 +536,7 @@
 											
 										</div>
 										
-										<div class="row">
+										<!-- <div class="row">
 											<div class="col-md-9 col-md-offset-1">
 												<div class="form-group">											
 													<lable>Street:</lable>
@@ -562,19 +547,19 @@
 													<input type="text" id="state" name="w_state" class="form-control">				
 												</div>
 											</div>
-										</div>
+										</div> -->
 										
 										<div class="row">
 											<div class="col-md-4 col-md-offset-1">
 												<div class="form-group">
 													<label class="control-label">Start Date</label>
-													<input type="text" class="form-control datepicker" name="start_date" placeholder="Date Picker Here"/>
+													<input type="text" class="form-control datepicker" name="start_dt" placeholder="Date Picker Here"/>
 												</div>
 											</div>
 											<div class="col-md-4">
 												<div class="form-group">
 													<label class="control-label">End Date</label>
-													<input type="text" class="form-control datepicker" name="end_date" placeholder="Date Picker Here"/>
+													<input type="text" class="form-control datepicker" name="end_dt" placeholder="Date Picker Here"/>
 												</div>
 											</div>
 										</div>
@@ -583,7 +568,7 @@
 											<div class="col-md-5 col-md-offset-1">
 												<div class="form-group">
 													<label for="exampleTextarea">Work Performed</label>
-												    <textarea class="form-control" name="work_performed" id="work_performed" rows="3"></textarea>
+												    <textarea class="form-control" name="work" id="work_performed" rows="3"></textarea>
 												</div>
 											</div>
 										</div>
@@ -592,7 +577,7 @@
 											<div class="col-md-5 col-md-offset-1">
 												<div class="form-group">
 													<label for="exampleTextarea">Reason for Leaving</label>
-												    <textarea class="form-control" name="reason_for_leaving" id="reason_for_leaving" rows="3"></textarea>
+												    <textarea class="form-control" name="reason" id="reason_for_leaving" rows="3"></textarea>
 												</div>
 											</div>
 										</div>

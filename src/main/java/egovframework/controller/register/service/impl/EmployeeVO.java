@@ -1,6 +1,6 @@
 package egovframework.controller.register.service.impl;
 
-import org.apache.ibatis.type.Alias;
+import java.util.Date;
 
 
 public class EmployeeVO {
@@ -20,6 +20,7 @@ public class EmployeeVO {
 	private String home_tel;
 	private String cel_tel;
 	private String e_mail;
+	private Date work_start_dt;
 	
 	/**
 	 *  fields for tab2
@@ -34,8 +35,8 @@ public class EmployeeVO {
 	public EmployeeVO() {}
 
 	public EmployeeVO(String ssn_num, String last_nm, String frst_nm, String mddl_nm, String street_addrs, String city,
-			String state, String zipcode, String home_tel, String cel_tel, String e_mail, String position,
-			String location, String work_style, String adult_yn, String related_yn, String skills) {
+			String state, String zipcode, String home_tel, String cel_tel, String e_mail, Date work_start_dt,
+			String position, String location, String work_style, String adult_yn, String related_yn, String skills) {
 		super();
 		this.ssn_num = ssn_num;
 		this.last_nm = last_nm;
@@ -48,6 +49,7 @@ public class EmployeeVO {
 		this.home_tel = home_tel;
 		this.cel_tel = cel_tel;
 		this.e_mail = e_mail;
+		this.work_start_dt = work_start_dt;
 		this.position = position;
 		this.location = location;
 		this.work_style = work_style;
@@ -55,8 +57,6 @@ public class EmployeeVO {
 		this.related_yn = related_yn;
 		this.skills = skills;
 	}
-
-
 
 	public String getSsn_num() {
 		return ssn_num;
@@ -146,6 +146,14 @@ public class EmployeeVO {
 		this.e_mail = e_mail;
 	}
 
+	public Date getWork_start_dt() {
+		return work_start_dt;
+	}
+
+	public void setWork_start_dt(Date work_start_dt) {
+		this.work_start_dt = work_start_dt;
+	}
+
 	public String getPosition() {
 		return position;
 	}
@@ -198,10 +206,9 @@ public class EmployeeVO {
 	public String toString() {
 		return "EmployeeVO [ssn_num=" + ssn_num + ", last_nm=" + last_nm + ", frst_nm=" + frst_nm + ", mddl_nm="
 				+ mddl_nm + ", street_addrs=" + street_addrs + ", city=" + city + ", state=" + state + ", zipcode="
-				+ zipcode + ", home_tel=" + home_tel + ", cel_tel=" + cel_tel + ", e_mail=" + e_mail + ", position="
-				+ position + ", location=" + location + ", work_style=" + work_style + ", adult_yn=" + adult_yn
-				+ ", related_yn=" + related_yn + ", skills=" + skills + "]";
+				+ zipcode + ", home_tel=" + home_tel + ", cel_tel=" + cel_tel + ", e_mail=" + e_mail
+				+ ", work_start_dt=" + work_start_dt + ", position=" + position + ", location=" + location
+				+ ", work_style=" + work_style + ", adult_yn=" + adult_yn + ", related_yn=" + related_yn + ", skills="
+				+ skills + "]";
 	}
-
-	
 }

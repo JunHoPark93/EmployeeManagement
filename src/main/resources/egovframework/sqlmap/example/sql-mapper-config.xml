@@ -5,6 +5,7 @@
     <typeAliases>
 		<typeAlias alias="egovMap" type="egovframework.rte.psl.dataaccess.util.EgovMap"/>
 		<typeAlias alias="employeeVO" type="egovframework.controller.register.service.impl.EmployeeVO"/>
-		<typeAlias alias="employeeHistoryVO" type="egovframework.controller.register.service.impl.EmployeeEducationVO"></typeAlias>
+		<typeAlias alias="employeeEducationVO" type="egovframework.controller.register.service.impl.EmployeeEducationVO"/>
+		<typeAlias alias="employeeHistoryVO" type="egovframework.controller.register.service.impl.EmployeeHistoryVO"/>
     </typeAliases>
 </configuration>
