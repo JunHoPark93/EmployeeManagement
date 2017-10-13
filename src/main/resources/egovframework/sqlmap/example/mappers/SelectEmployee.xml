@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="egovframework.controller.select.service.impl.SelectMapper">
+
+	<select id="selectEmployeeData" parameterType="String" resultType="Map">
+		SELECT 
+			SSN_NUM
+		  , FRST_NM
+		  , LAST_NM
+		  , MDDL_NM
+		  , STREET_ADDRS
+		  , CITY
+		  , STATE
+		  , ZIPCODE
+		  , HOME_TEL
+		  , CEL_TEL
+		  , E_MAIL
+		  , POSITION
+		  , LOCATION
+		  , RELATED_YN
+		  , WORK_STYLE
+		  , ADULT_YN
+		  , SKILLS
+		  , REGI_NM
+		  , MODI_NM
+		  , WORK_YN
+		FROM
+			T_EMPLOYEE
+		WHERE WORK_YN = "Y"
+		<if test='_parameter != null'>
+	 			AND LOCATION = #{_parameter}
+	 	</if>
+		
+		
+	</select>
+	
+	<select id="getOnesAllData" parameterType="String" resultType="Map">
+		SELECT * FROM 
+		
+			T_EMPLOYEE AS a
+			
+			INNER JOIN T_EDUCATION AS b
+			
+			ON a.SSN_NUM  = b.SSN_NUM
+			
+			INNER JOIN T_WORK_HIST AS c
+			
+			ON a.SSN_NUM = c.SSN_NUM
+			
+			<if test='_parameter != null'>
+				WHERE a.SSN_NUM = #{_parameter}; 
+			</if>
+			
+	</select>
+
+</mapper>

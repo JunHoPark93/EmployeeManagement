@@ -50,12 +50,27 @@
 
 
 <script type="text/javascript">
-	
+//var $table = $('#bootstrap-table');
+
+function operateFormatter(value, row, index) {
+
+	return [
+        '<a rel="tooltip" title="View" class="btn btn-simple btn-info btn-icon table-action view" href="javascript:void(0)">',
+            '<i class="fa fa-image"></i>',
+        '</a>',
+        '<a rel="tooltip" title="Edit" class="btn btn-simple btn-warning btn-icon table-action edit" href="javascript:void(0)">',
+            '<i class="fa fa-edit"></i>',
+        '</a>',
+        '<a rel="tooltip" title="Remove" class="btn btn-simple btn-danger btn-icon table-action remove" href="javascript:void(0)">',
+            '<i class="fa fa-remove"></i>',
+        '</a>'
+    ].join('');
+}
 </script>
 
 <form id="frm" name="frm">
-	<input type="hidden" id="pageName" name="pageName" /> <input
-		type="hidden" id="test" name="test" value="test" />
+	<input type="hidden" id="pageName" name="pageName" /> 
+	<input type="hidden" id="test" name="test" value="test" />
 </form>
 
 

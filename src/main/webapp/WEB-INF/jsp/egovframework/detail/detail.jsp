@@ -17,7 +17,7 @@
 	             <div class="col-md-8">
 	                 <div class="card">
 	                     <div class="header">
-	                         <h4 class="title">put name here</h4>
+	                         <h4 class="title">${empAllData.FRST_NM} ${empAllData.MDDL_NM} ${empAllData.LAST_NM }</h4>
 	                     </div>
 	                     <div class="content">
 	                         <form>
@@ -25,19 +25,19 @@
 	                                 <div class="col-md-5">
 	                                     <div class="form-group">
 	                                         <label>EMAIL</label>
-	                                         <input type="text" class="form-control" value="Creative Code Inc." readonly>
+	                                         <input type="text" class="form-control" value="${empAllData.E_MAIL}" readonly>
 	                                     </div>
 	                                 </div>
 	                                 <div class="col-md-3">
 	                                 	<div class="form-group">	                                     
 		                                 	<label>CEL_TEL</label>
-		                                    <input type="text" class="form-control" value="22" readonly>
+		                                    <input type="text" class="form-control" value="${empAllData.CEL_TEL}" readonly>
 	                                    </div>
 	                                 </div>
 	                                 <div class="col-md-4">
 	                                 	<div class="form-group">
 		                                 	<label>HOME_TEL</label>
-		                                    <input type="text" class="form-control" value="33" readonly>
+		                                    <input type="text" class="form-control" value="${empAllData.HOME_TEL}" readonly>
 		                                </div>
 	                                 </div>
 	                              </div>                      
@@ -46,7 +46,7 @@
 	                                 <div class="col-md-6">
 	                                     <div class="form-group">
 	                                         <label>ADDRESS</label>
-	                                         <input type="text" class="form-control" value="address" readonly>
+	                                         <input type="text" class="form-control" value="${empAllData.STREET_ADDRS}" readonly>
 	                                     </div>
 	                                 </div>
 	                             </div>
@@ -55,19 +55,19 @@
 	                                 <div class="col-md-3">
 	                                     <div class="form-group">
 	                                         <label>CITY</label>
-	                                         <input type="text" class="form-control" value="dd" readonly>
+	                                         <input type="text" class="form-control" value="${empAllData.CITY}" readonly>
 	                                     </div>
 	                                 </div>
 	                                 <div class="col-md-3">
 	                                     <div class="form-group">
 	                                         <label>STATE</label>
-	                                         <input type="text" class="form-control" value="dd" readonly>
+	                                         <input type="text" class="form-control" value="${empAllData.STATE}" readonly>
 	                                     </div>
 	                                 </div>
 	                                 <div class="col-md-3">
 	                                     <div class="form-group">
 	                                         <label>ZIPCODE</label>
-	                                         <input type="text" class="form-control" value="dd" readonly>
+	                                         <input type="text" class="form-control" value="${empAllData.ZIPCODE}" readonly>
 	                                     </div>
 	                                 </div>
 	                             </div>
@@ -76,25 +76,25 @@
 	                                 <div class="col-md-4">
 	                                     <div class="form-group">
 	                                         <label>POSITION</label>
-	                                         <input type="text" class="form-control" value="position" readonly>
+	                                         <input type="text" class="form-control" value="${empAllData.POSITION}" readonly>
 	                                     </div>
 	                                 </div>
 	                                 <div class="col-md-4">
 	                                     <div class="form-group">
 	                                         <label>Location</label>
-	                                         <input type="text" class="form-control" value="location" readonly>
+	                                         <input type="text" class="form-control" value="${empAllData.LOCATION}" readonly>
 	                                     </div>
 	                                 </div>
 	                                 <div class="col-md-2">
 	                                     <div class="form-group">
 	                                         <label>RELATED</label>
-	                                         <input type="text" class="form-control" value="related" readonly>
+	                                         <input type="text" class="form-control" value="${empAllData.RELATED_YN}" readonly>
 	                                     </div>
 	                                 </div>
 	                                 <div class="col-md-2">
 	                                     <div class="form-group">
 	                                         <label>ADULT</label>
-	                                         <input type="text" class="form-control" value="adult" readonly>
+	                                         <input type="text" class="form-control" value="${empAllData.ADULT_YN}" readonly>
 	                                     </div>
 	                                 </div>
 	                             </div>
@@ -103,7 +103,7 @@
 	                                 <div class="col-md-12">
 	                                     <div class="form-group">
 	                                         <label>SKILLS</label>
-	                                         <textarea rows="5" class="form-control" placeholder="Here can be your description" value="Mike" readonly>Skills fuck you</textarea>
+	                                         <textarea rows="5" class="form-control" placeholder="Here can be your description" readonly>${empAllData.SKILLS }</textarea>
 	                                     </div>
 	                                 </div>
 	                             </div>
@@ -112,20 +112,20 @@
 	                             	<div class="col-md-4">
 	                             		<div class="form-group">
 	                             			<label>WORK START DATE</label>
-	                             			<input type="text" class="form-control" value="2012" readonly/>
+	                             			<input type="text" class="form-control" value="${empAllData.WORK_START_DT}" readonly/>
 	                             		</div>
 	                             	</div>
 	                             	<div class="col-md-4">
 	                             		<div class="form-group">
-		                             		<label>HIGH SCHOOL</label>
-		                             		<input type="text" class="form-control" value="yes" readonly/>
+		                             		<label>EDUCATION</label>
+		                             		<input type="text" class="form-control" value="${empAllData.EDU_CODE}" readonly/>
 		                             	</div>
 	                             	</div>
 	                             	
                              		<div class="col-md-4">
                              		 	<div class="form-group">
                              		 		<label>HIGH SCHOOL</label>
-	                             			<input type="text" class="form-control" value="yes" readonly/>
+	                             			<input type="text" class="form-control" value="${empAllData.HIGH_YN}" readonly/>
                              		 	</div>	                             		
 	                             	</div>
 	                             </div>
@@ -134,25 +134,25 @@
 	                                 <div class="col-md-3">
 	                                     <div class="form-group">
 	                                         <label>EDUCATION</label>
-	                                         <input type="text" class="form-control" value="ed" readonly/>
+	                                         <input type="text" class="form-control" value="" readonly/>
 	                                     </div>
 	                                 </div>
 	                                 <div class="col-md-3">
 	                                     <div class="form-group">
 	                                         <label>SCHOOL NAME</label>
-	                                         <input type="text" class="form-control" value="sc" readonly/>
+	                                         <input type="text" class="form-control" value="${empAllData.SCHOOL_NM}" readonly/>
 	                                     </div>
 	                                 </div>
 	                                 <div class="col-md-3">
 	                                     <div class="form-group">
 	                                         <label>MAJOR</label>
-	                                         <input type="text" class="form-control" value="mn" readonly/>
+	                                         <input type="text" class="form-control" value="${empAllData.MAJOR}" readonly/>
 	                                     </div>
 	                                 </div>
 	                                 <div class="col-md-3">
 	                                     <div class="form-group">
 	                                         <label>GRADE</label>
-	                                         <input type="text" class="form-control" value="g" readonly/>
+	                                         <input type="text" class="form-control" value="${empAllData.GRADE}" readonly/>
 	                                     </div>
 	                                 </div>
 	                             </div>
@@ -161,19 +161,19 @@
 									<div class="col-md-4">
 										<div class="form-group">
 											<lable>COMPANY NAME</lable>
-											<input type="text" class="form-control" value="comp" readonly/>
+											<input type="text" class="form-control" value="${empAllData.EMP_NM}" readonly/>
 										</div>								
 									</div>
 									<div class="col-md-4">
 										<div class="form-group">
 											<lable>BUSINESS TYPE</lable>
-											<input type="text" class="form-control" value="comp" readonly/>
+											<input type="text" class="form-control" value="${empAllData.TYPE}" readonly/>
 										</div>								
 									</div>
 									<div class="col-md-4">
 										<div class="form-group">
 											<lable>JOB TITLE</lable>
-											<input type="text" class="form-control" value="comp" readonly/>
+											<input type="text" class="form-control" value="${empAllData.JOB_TITLE}" readonly/>
 										</div>								
 									</div>
 								</div>
@@ -182,13 +182,13 @@
 									<div class="col-md-4">
 										<div class="form-group">
 											<label>START DATE</label>
-											<input type="text" class="form-control" value="1022" readonly/>
+											<input type="text" class="form-control" value="${empAllData.START_DT}" readonly/>
 										</div>
 									</div>
 									<div class="col-md-4">
 										<div class="form-group">
 											<label>END DATE</label>
-											<input type="text" class="form-control" value="1022" readonly/>
+											<input type="text" class="form-control" value="${empAllData.END_DT}" readonly/>
 										</div>
 									</div>
 								
@@ -198,7 +198,7 @@
 	                                 <div class="col-md-12">
 	                                     <div class="form-group">
 	                                         <label>WORK PERFORMED</label>
-	                                         <textarea rows="5" class="form-control" value="dd" readonly>work perforemd</textarea>
+	                                         <textarea rows="5" class="form-control" value="dd" readonly>${empAllData.WORK}</textarea>
 	                                     </div>
 	                                 </div>
 	                             </div>
@@ -207,7 +207,7 @@
 	                                 <div class="col-md-12">
 	                                     <div class="form-group">
 	                                         <label>REASON FOR LEAVING</label>
-	                                         <textarea rows="5" class="form-control" value="dd" readonly>shit fuck you</textarea>
+	                                         <textarea rows="5" class="form-control" value="dd" readonly>${empAllData.REASON}</textarea>
 	                                     </div>
 	                                 </div>
 	                             </div>
@@ -221,15 +221,15 @@
 	             <div class="col-md-4">
 	                 <div class="card card-user">
 	                     <div class="image">
-	                         <img src="../../assets/img/full-screen-image-3.jpg" alt="..."/>
+	                         <img src="images/bootstrap/full-screen-image-3.jpg" alt="..."/>
 	                     </div>
 	                     <div class="content">
 	                         <div class="author">
 	                              <a href="#">
-	                             <img class="avatar border-gray" src="../../assets/img/default-avatar.png" alt="..."/>
+	                             <img class="avatar border-gray" src="images/bootstrap/lisa.jpg" alt="..."/>
 	
-	                               <h4 class="title">Tania Andrew<br />
-	                                  <small>michael24</small>
+	                               <h4 class="title">${empAllData.FRST_NM} ${empAllData.MDDL_NM} ${empAllData.LAST_NM }<br />
+	                                  <small>blank</small>
 	                               </h4>
 	                             </a>
 	                         </div>

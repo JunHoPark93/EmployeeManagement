@@ -79,20 +79,20 @@ var left = {
                 <li>
                     <a data-toggle="collapse" href="#componentsExamples"  aria-expanded="true">
                         <i class="pe-7s-plugin"></i>
-                        <p>Test
+                        <p>Employee Management
                            <b class="caret"></b>
                         </p>
                     </a>
                     <div class="collapse in" id="componentsExamples">
-                        <ul class="nav">
-                            <li prop="menu" class="" id="welcomeWebMenu">
-                               <a href="#" onclick="javascript:left.pageSubmitFn('welcomeWebMenu','welcomeWeb.do')">Test Child1</a>
-                            </li>
+                        <ul class="nav">                           
                             <li prop="menu" class="" id="four1">
                                <a href="#" onclick="javascript:left.pageSubmitFn('select','select.do')">Test Child2</a>
                             </li>
-                            <li prop="menu" class="" id="four2">
-                               <a href="#" onclick="javascript:left.pageSubmitFn('register', 'register.do')">Test Child3</a>
+                            <li prop="menu" class="" id="register">
+                               <a href="#" onclick="javascript:left.pageSubmitFn('register', 'register.do')">Employee Register</a>
+                            </li>
+                            <li prop="menu" class="" id="selectddddd">
+                               <a href="#" onclick="javascript:left.pageSubmitFn('welcomeWebMenu','welcomeWeb.do')">BLANK</a>
                             </li>
                         </ul>
                     </div>
@@ -101,14 +101,32 @@ var left = {
                 <li>
                     <a data-toggle="collapse" href="#componentsExamples2"  aria-expanded="true">
                         <i class="pe-7s-plugin"></i>
-                        <p>Test Form
+                        <p>Employee List
                            <b class="caret"></b>
                         </p>
                     </a>
                     <div class="collapse in" id="componentsExamples2">
                         <ul class="nav">
-                            <li prop="menu" class="" id="samJu">
-                               <a href="#" onclick="javascript:left.pageSubmitFn('formTest','formTest.do')">폼테스트 하위</a>
+                            <li prop="menu" class="" id="campcreek">
+                               <a href="#" onclick="javascript:left.pageSubmitFn('CampCreek','select.do')">Camp Creek</a>
+                            </li>
+                            <li prop="menu" class="" id="duluth">
+                               <a href="#" onclick="javascript:left.pageSubmitFn('Duluth','select.do')">Duluth</a>
+                            </li>
+                            <li prop="menu" class="" id="greenbriar">
+                               <a href="#" onclick="javascript:left.pageSubmitFn('GreenBriar','select.do')">Greenbriar</a>
+                            </li>
+                            <li prop="menu" class="" id="headland">
+                               <a href="#" onclick="javascript:left.pageSubmitFn('HeadLand','select.do')">Headland</a>
+                            </li>
+                            <li prop="menu" class="" id="morrow">
+                               <a href="#" onclick="javascript:left.pageSubmitFn('Morrow','select.do')">Morrow</a>
+                            </li>
+                            <li prop="menu" class="" id="oldnational">
+                               <a href="#" onclick="javascript:left.pageSubmitFn('OldNational','select.do')">Old National</a>
+                            </li>
+                            <li prop="menu" class="" id="riverdale">
+                               <a href="#" onclick="javascript:left.pageSubmitFn('Riverdale','select.do')">Riverdale</a>
                             </li>
                         </ul>
                     </div>

@@ -7,5 +7,6 @@
 		<typeAlias alias="employeeVO" type="egovframework.controller.register.service.impl.EmployeeVO"/>
 		<typeAlias alias="employeeEducationVO" type="egovframework.controller.register.service.impl.EmployeeEducationVO"/>
 		<typeAlias alias="employeeHistoryVO" type="egovframework.controller.register.service.impl.EmployeeHistoryVO"/>
+		<typeAlias alias="loginVO" type="egovframework.controller.login.service.impl.UserVO"/>
     </typeAliases>
 </configuration>
