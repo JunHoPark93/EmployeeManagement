@@ -18,6 +18,22 @@ public final class CheckValue {
 		}
 	}
 	
+	public static String checkPositionReverse(String name) {
+		if(name.equals("5")) {
+			return "Casher";
+		} else if(name.equals("4")) {
+			return "Sales";
+		} else if(name.equals("6")) {
+			return "Warehouse";
+		} else if(name.equals("3")) {
+			return "Manager";
+		} else if(name.equals("7")) {
+			return "Non-store";
+		} else {
+			return "9"; // error
+		}
+	}
+	
 	public static String checkWorkStyle(String name) {
 		if(name.equals("Full Time")) {
 			return "1";
@@ -27,6 +43,20 @@ public final class CheckValue {
 			return "3";
 		} else if(name.equals("Seasonal")) {
 			return "4";
+		} else {
+			return "9"; //error
+		}
+	}
+	
+	public static String checkWorkStyleReverse(String name) {
+		if(name.equals("1")) {
+			return "Full Time";
+		} else if(name.equals("2")) {
+			return "Part Time";
+		} else if(name.equals("3")) {
+			return "Temporary";
+		} else if(name.equals("4")) {
+			return "Seasonal";
 		} else {
 			return "9"; //error
 		}
@@ -65,6 +95,25 @@ public final class CheckValue {
 			return "99"; // error
 	}
 	
+	public static String checkLocationReverse(String loc) {
+		if(loc.equals("1"))
+			return "HeadLand";
+		else if(loc.equals("2")) 
+			return "Morrow";
+		else if(loc.equals("3")) 
+			return "OldNational";
+		else if(loc.equals("4"))
+			return "CampCreek";
+		else if(loc.equals("5"))
+			return "GreenBriar";
+		else if(loc.equals("6"))
+			return "Duluth";
+		else if(loc.equals("7"))
+			return "Riverdale";
+		else
+			return "99"; // error
+	}
+	
 	public static String CheckEduCode(String edu) {
 		if(edu.equals("College")) 
 			return "2";
@@ -76,6 +125,21 @@ public final class CheckValue {
 			return "4";
 		else if(edu.equals("Trade School"))
 			return "5";
+		else
+			return "9"; // error
+	}
+	
+	public static String CheckEduCodeReverse(String edu) {
+		if(edu.equals("2")) 
+			return "College";
+		else if(edu.equals("1"))
+			return "University";
+		else if(edu.equals("3"))
+			return "Business";
+		else if(edu.equals("4"))
+			return "Technical";
+		else if(edu.equals("5"))
+			return "Trade School";
 		else
 			return "9"; // error
 	}

@@ -17,4 +17,11 @@ public interface RegisterMapper {
 	List<Map> selectData() throws Exception;
 	
 	//void insertData(EmployeeVO employeeVO, EmployeeEducationVO employeeEducationVO) throws Exception ;
+	
+	void updateEmployee(EmployeeVO employeeVO) throws Exception;
+
+	void updateEmployeeEducation(EmployeeEducationVO employeeEducationVO) throws Exception;
+	
+	void updateEmployeeHistory(EmployeeHistoryVO employeeHistoryVO) throws Exception;
+	
 }

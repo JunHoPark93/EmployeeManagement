@@ -42,19 +42,72 @@ public class RegisterServiceImpl extends EgovAbstractServiceImpl implements Regi
 		// transaction applied
 		registerMapper.insertEmployee(employeeVO);
 		registerMapper.insertEmployeeEducation(employeeEducationVO); 
-		registerMapper.insertEmployeeHistory(employeeHistoryVO);
+		//registerMapper.insertEmployeeHistory(employeeHistoryVO);
 
 		
-/*		System.out.println("insertDataTx");
+		System.out.println("insertDataTx");
 		try {
-			if(employeeHistoryVO.getEmp_name().length() >= 1 && employeeHistoryVO.getType().length() >= 1
-					&& employeeHistoryVO.getJob_title().length() >= 1) {
+			if(employeeHistoryVO.getEmp_nm() != null &&  employeeHistoryVO.getType() != null 
+					&& employeeHistoryVO.getJob_title() != null) {
 				System.out.println("work histroy ok");
 				registerMapper.insertEmployeeHistory(employeeHistoryVO);
 			}
 		} catch(Exception e) {
 			System.out.println("insertDataTx Exception");
 			e.printStackTrace();
-		}*/
+		}
 	}
+
+	@Override
+	public void updateDataTx(EmployeeVO employeeVO, EmployeeEducationVO employeEducationVO,
+			EmployeeHistoryVO employeeHistoryVO) throws Exception {
+		
+		
+		
+				// transaction applied
+		
+		// 여기서부터 업데이트 쿼리 시작 insert아님!
+		
+				//registerMapper.insertEmployee(employeeVO);
+				//registerMapper.insertEmployeeEducation(employeEducationVO); 
+		
+		System.out.println("RegisterServiceImpl :  " + employeEducationVO);
+		
+		try {
+			
+			registerMapper.updateEmployeeEducation(employeEducationVO);
+			
+			System.out.println("컴퓨터 다 부수고싶다 염병" + employeeHistoryVO);
+
+				
+				System.out.println("updateDataTx");
+				try {
+					if(employeeHistoryVO.getEmp_nm() != null &&  employeeHistoryVO.getType() != null 
+							&& employeeHistoryVO.getJob_title() != null) {
+						System.out.println("work histroy ok");
+						
+			// 여긴 히스토리 부분 이니까 if문안에 타면 업데이트 시켜줘야 함 insert 아님!
+						
+						//registerMapper.insertEmployeeHistory(employeeHistoryVO);
+						registerMapper.updateEmployeeHistory(employeeHistoryVO);
+					}
+				} catch(Exception e) {
+					System.out.println("updateDataTx Exception");
+					e.printStackTrace();
+				}
+				
+				registerMapper.updateEmployee(employeeVO);
+		}catch(Exception e ){ 
+			e.printStackTrace();
+		}
+		
+	}
+
+/*	@Override
+	public void insertDataWithoutWorkTx(EmployeeVO employeeVO, EmployeeEducationVO employeEducationVO) throws Exception {
+		registerMapper.insertEmployee(employeeVO);
+		registerMapper.insertEmployeeEducation(employeEducationVO); 
+		//registerMapper.insertEmployeeHistory(employeeHistoryVO);
+
+	}*/
 }

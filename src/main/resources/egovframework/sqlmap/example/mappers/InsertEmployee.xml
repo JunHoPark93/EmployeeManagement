@@ -109,6 +109,54 @@
 	<select id="selectData" resultType="HashMap">
 		SELECT * FROM t_employee;
 	</select>
-
+	
+	
+	<update id="updateEmployee" parameterType="employeeVO">
+		UPDATE T_EMPLOYEE SET
+		
+			frst_nm = #{frst_nm},
+			last_nm = #{last_nm},
+			mddl_nm = #{mddl_nm},
+			street_addrs = #{street_addrs},
+			city = #{city},
+			state = #{state},
+			zipcode = #{zipcode},
+			home_tel = #{home_tel},
+			cel_tel = #{cel_tel},
+			e_mail = #{e_mail},
+			position = #{position},
+			location = #{location},
+			related_yn = #{related_yn},
+			work_style = #{work_style},
+			adult_yn = #{adult_yn},
+			skills = #{skills},
+			modi_nm = "modiJay"		
+						
+		WHERE ssn_num = ${ssn_num}
+	</update>
+	
+	<update id="updateEmployeeEducation" parameterType="employeeEducationVO">
+		UPDATE T_EDUCATION SET
+			high_yn = #{high_yn},
+			edu_code = #{edu_code},
+			school_nm = #{school_nm},
+			major = #{major},
+			grade = #{grade},
+			modi_nm = "modiJay"
+			
+		WHERE ssn_num = ${ssn_num}
+	</update>	
+	
+	<update id="updateEmployeeHistory" parameterType="employeeHistoryVO">
+		UPDATE T_WORK_HIST SET
+			emp_nm = #{emp_nm},
+			type = #{type},
+			job_title = #{job_title},
+			work = #{work},
+			reason = #{reason},
+			modi_nm = "modiJay"
+						
+		WHERE ssn_num = ${ssn_num}
+	</update>
 
 </mapper>
