@@ -28,14 +28,18 @@
 	});
 </script>
 
-<script src="js/bootstrap/jquery-ui.min.js" type="text/javascript"></script>
-<script src="js/bootstrap/bootstrap.min.js" type="text/javascript"></script>
-
-<!--  Forms Validations Plugin -->
-<script src="js/bootstrap/jquery.validate.min.js"></script>
 
 <!--  Plugin for Date Time Picker and Full Calendar Plugin-->
 <script src="js/bootstrap/moment.min.js"></script>
+
+<script src="js/bootstrap/jquery-ui.min.js" type="text/javascript"></script> 
+<script src="js/bootstrap/bootstrap.min.js" type="text/javascript"></script>
+
+<!-- test -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
+
+<!--  Forms Validations Plugin -->
+<script src="js/bootstrap/jquery.validate.min.js"></script>
 
 <!--  Date Time Picker Plugin is included in this js file -->
 <script src="js/bootstrap/bootstrap-datetimepicker.js"></script>

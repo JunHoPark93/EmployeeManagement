@@ -148,7 +148,7 @@
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2">
 				<div class="card card-wizard" id="wizardCard">
-					<form id="wizardForm" method="post" action="complete.do">
+					<form id="wizardForm" method="post" action="complete.do?${_csrf.parameterName}=${_csrf.token}">
 
 						<div class="header text-center">
 							<h3 class="title">Beauty Master Employee Register</h3>
@@ -530,7 +530,7 @@
 												<div class="form-group">
 													<label class="control-label">Job Title</label> <input
 														class="form-control" type="text" name="job_title"
-														required="false" placeholder="ex: Manager" />
+														placeholder="ex: Manager" />
 												</div>
 											</div>
 											

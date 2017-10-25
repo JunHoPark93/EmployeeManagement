@@ -28,6 +28,10 @@
 
 <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
 
+<!-- test -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css">
+ 
+
 <!-- StreetAddress API -->
 <script
 	src="//d79i1fxsrar4t.cloudfront.net/jquery.liveaddress/4.0/jquery.liveaddress.min.js"></script>

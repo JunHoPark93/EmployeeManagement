@@ -46,11 +46,26 @@
         
         $('input[name=edu_code][value= "${education}"]').attr('checked', true);
         
+        
+        // related check
+        if('${empAllData.RELATED_YN}' == 'Y') {
+        	$("#related").prop("checked", true);
+        } 
+        
+        // at least 18 check
+        if('${empAllData.ADULT_YN}' == 'Y') {
+        	$("#adult_yn").prop("checked", true);
+        }
+        
+        if('${empAllData.HIGH_YN}' == 'Y') {
+        	$("#highschol").prop("checked", true);
+        }
+        
+		console.log("register page entered");
+		
+		alert("${empAllData.WORK_START_DT}");
+		
 	});
-    
-
-	
-	console.log("register page entered");
 
     
 	
@@ -150,8 +165,10 @@
 
       function onFinishWizard(){
           //here you can do something, sent the form to server via ajax and show a success message with swal
-			alert("zz);")
+			
           swal("Good job!", "You clicked the finish button!", "success");
+          
+          //$("#ssn_num").val(row.ssn_num);
           
           $("#wizardForm").submit();
       }
@@ -160,12 +177,16 @@
 		
 </script>
 
+<form id="frm_update" name="frm_update">
+	<input type="hidden" id="ssn_num" name="ssn_num" /> 
+</form>
+
 <div class="content">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2">
 				<div class="card card-wizard" id="wizardCard">
-					<form id="wizardForm" method="post" action="update.do">
+					<form id="wizardForm" method="post" action="updateEmp.do?${_csrf.parameterName}=${_csrf.token}">
 
 						<div class="header text-center">
 							<h3 class="title">Beauty Master Employee Register</h3>
@@ -230,7 +251,7 @@
 													id="ssn_num"
 													required="true" 
 													value="${empAllData.SSN_NUM}"
-													placeholder="111-111-111" />
+													placeholder="111-111-111" readonly/>
 											</div>
 										</div>
 										
@@ -308,7 +329,10 @@
 	                                	<div class="col-md-4 col-md-offset-2">
 											<div class="form-group">
 												<label class="control-label">Work Start Date</label>
-												<input type="text" class="form-control datepicker" name="work_start_dt" id="work_start_dt" placeholder="Date Picker Here"/>
+												<input type="text" class="form-control " 
+												name="work_start_dt" id="work_start_dt" 												
+												value="${empAllData.WORK_START_DT}" readonly/>
+									
 											</div>
 										</div>
 									</div>
@@ -371,7 +395,7 @@
 			                                         data-on-label="YES"
 			                                         data-off-label="NO">
 			                                         <input type="hidden" name="related" value="0"/>
-			                                         <input type="checkbox" name="related" value="1"/>			                                         
+			                                         <input type="checkbox" name="related" value="1" id="related"/>			                                         
 			                                    </div>
 			                            
 											</div>
@@ -383,7 +407,7 @@
 			                                         data-on-label="YES"
 			                                         data-off-label="NO">
 			                                         <input type="hidden" name="adult_yn" value="0"/>
-			                                         <input type="checkbox" name="adult_yn" value="1"/>			                                         
+			                                         <input type="checkbox" name="adult_yn" value="1" id="adult_yn"/>			                                         
 			                                    </div>
 			                            
 											</div>
@@ -394,7 +418,7 @@
 										<div class="col-md-5 col-md-offset-1">
 											<div class="form-group">
 												<label for="exampleTextarea">Skills And Experience</label>
-											    <textarea class="form-control" name="skills" id="skills" rows="3"></textarea>
+											    <textarea class="form-control" name="skills" id="skills" rows="3">${empAllData.SKILLS}</textarea>
 											</div>
 										</div>
 									</div>
@@ -407,7 +431,7 @@
 			                                         data-on-label="YES"
 			                                         data-off-label="NO">
 			                                         <input type="hidden" name="highschool" value="0"/>
-			                                         <input type="checkbox" name="highschool" value="1"/>			                                         
+			                                         <input type="checkbox" name="highschool" value="1" id="highschool"/>			                                         
 			                                    </div>	                                         
 	                                        </div>
                                         </div>
@@ -447,7 +471,7 @@
 											<div class="form-group">
 												<label class="control-label">School Name</label> <input
 													class="form-control" type="text" name="school_name"
-													placeholder="ex: XXX University, XXX college" />
+													placeholder="ex: XXX University, XXX college" value="${empAllData.SCHOOL_NM}" />
 											</div>
 										</div>								
 										
@@ -455,7 +479,7 @@
 											<div class="form-group">
 												<label class="control-label">Major</label> <input
 													class="form-control" type="text" name="major"
-													placeholder="ex: Advertising" />
+													placeholder="ex: Advertising" value="${empAllData.MAJOR}"/>
 											</div>
 										</div>
 										
@@ -463,7 +487,7 @@
 											<div class="form-group">
 												<label class="control-label">Grade</label> <input
 													class="form-control" type="text" name="grade"
-													placeholder="ex: 3.0" />
+													placeholder="ex: 3.0" value="${empAllData.GRADE}"/>
 											</div>
 										</div>
 										
@@ -485,7 +509,7 @@
 												<div class="form-group">
 													<label class="control-label">Company Name</label> <input
 														class="form-control" type="text" name="emp_nm"
-														placeholder="ex: Mike" />
+														placeholder="ex: Mike" value="${empAllData.WORK}"/>
 												</div>
 											</div>
 											
@@ -493,7 +517,7 @@
 												<div class="form-group">
 													<label class="control-label">Business Type</label> <input
 														class="form-control" type="text" name="type"
-														placeholder="ex: Food Mart" />
+														placeholder="ex: Food Mart" value="${empAllData.TYPE}"/>
 												</div>
 											</div>
 											
@@ -501,7 +525,7 @@
 												<div class="form-group">
 													<label class="control-label">Job Title</label> <input
 														class="form-control" type="text" name="job_title"
-														required="false" placeholder="ex: Manager" />
+														required="false" placeholder="ex: Manager" value="${empAllData.JOB_TITLE}"/>
 												</div>
 											</div>
 											
@@ -524,13 +548,15 @@
 											<div class="col-md-4 col-md-offset-1">
 												<div class="form-group">
 													<label class="control-label">Start Date</label>
-													<input type="text" class="form-control datepicker" name="start_dt" value="" placeholder="Date Picker Here"/>
+													<input type="text" class="form-control " name="start_dt"
+													value="${empAllData.START_DT}" placeholder="Date Picker Here" readonly/>
 												</div>
 											</div>
 											<div class="col-md-4">
 												<div class="form-group">
 													<label class="control-label">End Date</label>
-													<input type="text" class="form-control datepicker" name="end_dt" placeholder="Date Picker Here"/>
+													<input type="text" class="form-control " name="end_dt" 
+													value="${empAllData.END_DT}" placeholder="Date Picker Here" readonly/>
 												</div>
 											</div>
 										</div>
@@ -539,7 +565,7 @@
 											<div class="col-md-5 col-md-offset-1">
 												<div class="form-group">
 													<label for="exampleTextarea">Work Performed</label>
-												    <textarea class="form-control" name="work" id="work_performed" rows="3"></textarea>
+												    <textarea class="form-control" name="work" id="work_performed" rows="3">${empAllData.WORK}</textarea>
 												</div>
 											</div>
 										</div>
@@ -548,7 +574,7 @@
 											<div class="col-md-5 col-md-offset-1">
 												<div class="form-group">
 													<label for="exampleTextarea">Reason for Leaving</label>
-												    <textarea class="form-control" name="reason" id="reason_for_leaving" rows="3"></textarea>
+												    <textarea class="form-control" name="reason" id="reason_for_leaving" rows="3">${empAllData.REASON}</textarea>
 												</div>
 											</div>
 										</div>

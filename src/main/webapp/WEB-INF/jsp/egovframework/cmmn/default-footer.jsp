@@ -5,6 +5,8 @@
 
 		//alert("footer");
 	});
+	
+	
 </script>
 
 <footer class="footer">

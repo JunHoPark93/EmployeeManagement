@@ -7,7 +7,7 @@
 <html>
 
 <head>
-	<meta charset="utf-8" />
+	<!-- <meta charset="utf-8" />
 	<link rel="icon" type="image/png" href="images/bootstrap/favicon.ico">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
@@ -17,24 +17,24 @@
     <meta name="viewport" content="width=device-width" />
     
     
-	   <!-- Bootstrap core CSS     -->
+	   Bootstrap core CSS    
 	<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
 	
-	<!--  Light Bootstrap Dashboard core CSS    -->
+	 Light Bootstrap Dashboard core CSS   
 	<link href="css/bootstrap/light-bootstrap-dashboard.css"
 		rel="stylesheet" />
 	
-	<!--  CSS for Demo Purpose, don't include it in your project     -->
+	 CSS for Demo Purpose, don't include it in your project    
 	<link href="css/bootstrap/demo.css" rel="stylesheet" />
 	
-	<!--     Fonts and icons     -->
+	    Fonts and icons    
 	<link
 		href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"
 		rel="stylesheet">
 	<link href="css/bootstrap/pe-icon-7-stroke.css" rel="stylesheet" />
 	
 	<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
-
+ -->
 </head>
 <body> 
 
@@ -114,52 +114,52 @@
      </div>
 </body>
 
- <script src="js/bootstrap/jquery-ui.min.js" type="text/javascript"></script>
+<!--  <script src="js/bootstrap/jquery-ui.min.js" type="text/javascript"></script>
 <script src="js/bootstrap/bootstrap.min.js" type="text/javascript"></script>
 
-<!--  Forms Validations Plugin -->
+ Forms Validations Plugin
 <script src="js/bootstrap/jquery.validate.min.js"></script>
 
-<!--  Plugin for Date Time Picker and Full Calendar Plugin-->
+ Plugin for Date Time Picker and Full Calendar Plugin
 <script src="js/bootstrap/moment.min.js"></script>
 
-<!--  Date Time Picker Plugin is included in this js file -->
+ Date Time Picker Plugin is included in this js file
 <script src="js/bootstrap/bootstrap-datetimepicker.js"></script>
 
-<!--  Select Picker Plugin -->
+ Select Picker Plugin
 <script src="js/bootstrap/bootstrap-selectpicker.js"></script>
 
-<!--  Checkbox, Radio, Switch and Tags Input Plugins -->
+ Checkbox, Radio, Switch and Tags Input Plugins
 <script src="js/bootstrap/bootstrap-checkbox-radio-switch-tags.js"></script>
 
-<!--  Charts Plugin -->
+ Charts Plugin
 <script src="js/bootstrap/chartist.min.js"></script>
 
-<!--  Notifications Plugin    -->
+ Notifications Plugin   
 <script src="js/bootstrap/bootstrap-notify.js"></script>
 
-<!-- Sweet Alert 2 plugin -->
+Sweet Alert 2 plugin
 <script src="js/bootstrap/sweetalert2.js"></script>
 
-<!-- Vector Map plugin -->
+Vector Map plugin
 <script src="js/bootstrap/jquery-jvectormap.js"></script>
 
-<!-- Wizard Plugin    -->
+Wizard Plugin   
 <script src="js/bootstrap/jquery.bootstrap.wizard.min.js"></script>
 
-<!--  Bootstrap Table Plugin    -->
+ Bootstrap Table Plugin   
 <script src="js/bootstrap/bootstrap-table.js"></script>
 
-<!--  Plugin for DataTables.net  -->
+ Plugin for DataTables.net 
 <script src="js/bootstrap/jquery.datatables.js"></script>
 
-<!--  Full Calendar Plugin    -->
+ Full Calendar Plugin   
 <script src="js/bootstrap/fullcalendar.min.js"></script>
 
-<!-- Light Bootstrap Dashboard Core javascript and methods -->
+Light Bootstrap Dashboard Core javascript and methods
 <script src="js/bootstrap/light-bootstrap-dashboard.js"></script>
 
-<!-- Light Bootstrap Dashboard DEMO methods, don't include it in your project! -->
+Light Bootstrap Dashboard DEMO methods, don't include it in your project!
 <script src="js/bootstrap/demo.js"></script>
 	    
     <script type="text/javascript">
@@ -171,6 +171,6 @@
                 $('.card').removeClass('card-hidden');
             }, 700)
         });
-    </script>
+    </script> -->
 </html>
     

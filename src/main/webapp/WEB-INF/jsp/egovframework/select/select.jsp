@@ -41,15 +41,28 @@
 		            
 		            // employee detail with ssn_num
 		            $("#ssn_num").val(row.ssn_num);
+		            $("#option").val("detail");
+
 		            $("#frm_detail").attr("action", "detail.do");
 		            $("#frm_detail").submit();
 		
 		        },
 		        'click .edit': function (e, value, row, index) {
 		            info = JSON.stringify(row);
-		
+					
+		            alert(row.frst_nm);
+		            alert(row.ssn_num);		            
+		            
 		            swal('You click edit icon, row: ', info);
 		            console.log(info);
+		            
+		            $("#ssn_num").val(row.ssn_num);
+		            $("#option").val("update");
+
+		            $("#frm_detail").attr("action", "detail.do");
+		            $("#frm_detail").submit();
+		            
+		      
 		        },
 		        'click .remove': function (e, value, row, index) {
 		            console.log(row);
@@ -100,6 +113,7 @@
 
 <form id="frm_detail" name="frm_detail">
 	<input type="hidden" id="ssn_num" name="ssn_num" /> 
+	<input type="hidden" id="option" name="option" />
 </form>
 
 <div class="content">
