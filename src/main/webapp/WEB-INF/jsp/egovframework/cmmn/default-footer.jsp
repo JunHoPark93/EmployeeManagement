@@ -20,7 +20,7 @@
 			</ul>
 		</nav>
 		<p class="copyright pull-right">
-			&copy; 2016 <a href="http://cafe.naver.com/cocggmgz">dddd</a>sdfzsfsdf
+			&copy; 2017 <a href="http://cafe.naver.com/cocggmgz">BM </a>Employee 
 		</p>
 	</div>
 </footer>

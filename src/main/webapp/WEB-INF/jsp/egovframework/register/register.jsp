@@ -136,7 +136,6 @@
 
       function onFinishWizard(){
           //here you can do something, sent the form to server via ajax and show a success message with swal
-			alert("zz);")
           swal("Good job!", "You clicked the finish button!", "success");
           
           $("#wizardForm").submit();
@@ -204,16 +203,31 @@
 											</div>
 										</div>
 										
-										<div class="col-md-3">
+										<!-- <div class="col-md-3">
 											<div class="form-group">
-												<label class="control-label">SSN Number<star>*</star></label> <input
+												<label class="control-label">SSN Number<star>*</star></label> 
+												<input
 													class="form-control" type="text" name="ssn_num"
 													id="ssn_num"
 													required="true" 
 													placeholder="111-111-111" />
+													<input type="text" name="ssn_num" id="ssn_num" class="form-control" value="" size="3" maxlength="3" required="required" title="">
+                    								<input type="text" name="ssn_num" id="ssn_num" class="form-control" value="" size="2" maxlength="2" required="required" title="">
+                    								<input type="text" name="ssn_num" id="ssn_num" class="form-control" value="" size="4" maxlength="4" required="required" title="">              
+											</div>
+										</div> -->
+										
+									</div>
+									
+									<div class="row">
+										<div class="col-md-3 col-md-offset-1">
+											<div class="form-group">
+												<label class="control-label">SSN Number<star>*</star></label> 
+													<input type="text" name="ssn_num" id="ssn_num" class="form-control" value="" size="3" maxlength="3" required="required" title="">
+                    								<input type="text" name="ssn_num" id="ssn_num" class="form-control" value="" size="2" maxlength="2" required="required" title="">
+                    								<input type="text" name="ssn_num" id="ssn_num" class="form-control" value="" size="4" maxlength="4" required="required" title="">              
 											</div>
 										</div>
-										
 									</div>
 									
 									<div class="row">
@@ -251,16 +265,18 @@
 										<div class="col-md-3 col-md-offset-1">
 											<div class="form-group">
 												<label class="control-label">Cell Phone</label> 
-												<input type="text" class="input-medium bfh-phone"
+							<!-- 					<input type="tel" class="input-medium bfh-phone"
 												name="cel_tel" required="true"
 												id="cel_tel"
-												data-format="+1 (ddd) ddd-dddd">
+												data-format="+1 (ddd) ddd-dddd"> -->
+												<input type="text" class="form-control bfh-phone" data-format="+1 (ddd) ddd-dddd"
+														name="cel_tel" id="cel_tel">
 											</div>
 										</div>
 										<div class="col-md-3">
 											<div class="form-group">
 												<label class="control-label">Home Tel</label>
-												<input type="text" class="input-medium bfh-phone"
+												<input type="text" class="form-control bfh-phone"
 												name="home_tel"
 												id="home_tel"
 												data-format="+1 (ddd) ddd-dddd">
@@ -273,7 +289,7 @@
 											<div class="form-group">
 	                                            <label class="control-label">Position</label>                                               
 	
-													<select multiple data-title="Multiple Select" name="position" class="selectpicker" data-style="btn-info btn-fill btn-block" data-menu-style="dropdown-blue">
+													<select multiple data-title="Multiple Select" name="position" class="selectpicker" data-style="btn-info btn-fill btn-block" data-menu-style="dropdown-blue" required>
 		                                                <option value="Casher">Casher</option>
 		                                                <option value="Sales">Sales</option>
 		                                                <option value="Warehouse">Warehouse</option>
@@ -288,12 +304,11 @@
 	                                	<div class="col-md-4 col-md-offset-2">
 											<div class="form-group">
 												<label class="control-label">Work Start Date</label>
-												<input type="text" class="form-control datepicker" name="work_start_dt" placeholder="Date Picker Here"/>
+												<input type="text" class="form-control datepicker" name="work_start_dt" placeholder="Date Picker Here" required/>
 											</div>
 										</div>
 									</div>
 															                                
-	                                <button type="button" class="btn btn-primary" id="testBtn">TestBtn</button>                          
 								</div> <!-- end of tab1 -->
 								
 								
@@ -416,6 +431,10 @@
                                                
                                                	<label class="radio">
                                                    <input type="radio" data-toggle="radio" name="edu_code" value="Trade School">Trade School
+                                               	</label>
+                                               	
+                                               	<label class="radio">
+                                                   <input type="radio" data-toggle="radio" name="edu_code" value="None">None of Above
                                                	</label>
                                                	
 	                                        </div>

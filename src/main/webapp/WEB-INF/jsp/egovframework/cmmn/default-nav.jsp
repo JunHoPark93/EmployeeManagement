@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
     
 <nav class="navbar navbar-default">
        <div class="container-fluid">
@@ -28,7 +31,7 @@
                </form>
 
                <ul class="nav navbar-nav navbar-right">
-                   <li>
+                   <!-- <li>
                        <a href="../charts.html">
                            <i class="fa fa-line-chart"></i>
                            <p>Stats</p>
@@ -69,7 +72,7 @@
                            <li><a href="#">Notification 4</a></li>
                            <li><a href="#">Another notification</a></li>
                        </ul>
-                   </li>
+                   </li> -->
 
                    <li class="dropdown dropdown-with-icons">
                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -106,7 +109,14 @@
 								<i class="pe-7s-close-circle"></i>
 								Log out
 							</a>
-						</li>                          
+						   </li>
+						   <li>
+						   <sec:authorize access="isAuthenticated()">
+							<form:form action="${pageContext.request.contextPath}/logout" method="POST">
+							    <input type="submit" value="Log out" />
+							</form:form>
+							</sec:authorize>
+						   </li>                          
                        </ul>
                    </li>
                </ul>

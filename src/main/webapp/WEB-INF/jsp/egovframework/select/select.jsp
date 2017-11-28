@@ -16,6 +16,8 @@
 		
 		function operateFormatter(value, row, index) {
 			//alert("fuck");
+			alert("sbhitishit");
+			
 		    return [
 		        '<a rel="tooltip" title="View" class="btn btn-simple btn-info btn-icon table-action view" href="javascript:void(0)">',
 		            '<i class="fa fa-image"></i>',
@@ -65,11 +67,34 @@
 		      
 		        },
 		        'click .remove': function (e, value, row, index) {
-		            console.log(row);
+		            /* console.log(row);
 		            $table.bootstrapTable('remove', {
 		                field: 'id',
 		                values: [row.id]
-		            });
+		            }); */
+		            info = JSON.stringify(row);
+		            swal('You click delete', info);
+		            
+		          /*   $.ajax({
+		            	type : "POST",
+		            	url : "delete.do",
+		            	data : {"ssn_num" : row.ssn_num},
+		            	async : false,
+		            	beforeSend : function(xhr) {
+		            		alert("before deleting");
+		            	},
+		            	success : function(result) {
+		            		
+		            	},
+		            	error : function() {
+		            		alert("error in ajax");
+		            	}
+		            }); */
+		            
+		            
+		            $("#ssn_num").val(row.ssn_num);
+		            $("#frm_detail").attr("action", "delete.do");
+		            $("#frm_detail").submit(); 
 		        }
 		    };
 		

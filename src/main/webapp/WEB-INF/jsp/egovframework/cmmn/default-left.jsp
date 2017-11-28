@@ -45,18 +45,19 @@ var left = {
         </div>
 		<div class="logo logo-mini">
 			<a href="http://www.creative-tim.com" class="logo-text">
-				Ct
+				BM
 			</a>
 		</div>
 
     	<div class="sidebar-wrapper">
           <div class="user">
                 <div class="photo">
-                    <img src="images/bootstrap/default-avatar2.PNG" />
+                    <%-- <img src="https://s3.amazonaws.com/beautymaster/logo/${session}.jpg"/> --%>
+                    <img src="images/bootstrap/bmlogo.jpg"/>
                 </div>
-                <div class="info">
+                <%-- <div class="info">
                     <a data-toggle="collapse" href="#collapseExample" class="collapsed">
-                        Jay
+                        ${session}
                         <b class="caret"></b>
                     </a>
                     <div class="collapse" id="collapseExample">
@@ -66,7 +67,7 @@ var left = {
                             <li><a href="#">Settings</a></li>
                         </ul>
                     </div>
-                </div>
+                </div> --%>
             </div> 
             <ul class="nav">
                 <li prop="menu" class="" id="mainMenu">
@@ -86,13 +87,16 @@ var left = {
                     <div class="collapse in" id="componentsExamples">
                         <ul class="nav">                           
                             <li prop="menu" class="" id="four1">
-                               <a href="#" onclick="javascript:left.pageSubmitFn('select','select.do')">Test Child2</a>
+                               <a href="#" onclick="javascript:left.pageSubmitFn('out','out.do')">OUT</a>
                             </li>
                             <li prop="menu" class="" id="register">
                                <a href="#" onclick="javascript:left.pageSubmitFn('register', 'register.do')">Employee Register</a>
                             </li>
                             <li prop="menu" class="" id="selectddddd">
-                               <a href="#" onclick="javascript:left.pageSubmitFn('welcomeWebMenu','welcomeWeb.do')">BLANK</a>
+                               <a href="#" onclick="javascript:left.pageSubmitFn('uploadPage','uploadPage.do')">AWS TEST</a>
+                            </li>
+                             <li prop="menu" class="" id="admin">
+                               <a href="#" onclick="javascript:left.pageSubmitFn('admin','admin.do')">Admin ONLY</a>
                             </li>
                         </ul>
                     </div>

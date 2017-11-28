@@ -9,7 +9,38 @@
 
 <script type="text/javascript">
 
+$(document).ready(function() {
+	$("#employeeImage").click(function(event) {
+		alert("imageclicked");
+		
+		$.ajax({
+			type : "POST",
+			url : "image.do",
+			async : false,
+			data : {ssn_num : "${empAllData.SSN_NUM}"},
+			beforeSend : function(xhr) {
+			
+			}, 
+			success : function(xhr) {
+				
+			},
+			error : function(xhr) {
+				alert("ajax error");
+				console.log(xhr);
+			}
+			
+		});
+		
+/* 		$("#image").attr("action", "image.do");
+		$("#image").submit(); */
+	});
+});
+	
 </script>
+
+<form id="image" name="image">
+	<input type="hidden" id="ssn_num" name="ssn_num" value="${empAllData.SSN_NUM}"/> 
+</form>
 	
 	<div class="content">
 	     <div class="container-fluid">
@@ -82,7 +113,7 @@
 	                                 <div class="col-md-4">
 	                                     <div class="form-group">
 	                                         <label>Location</label>
-	                                         <input type="text" class="form-control" value="${empAllData.LOCATION}" readonly/>
+	                                         <input type="text" class="form-control" value="${location}" readonly/>
 	                                     </div>
 	                                 </div>
 	                                 <div class="col-md-2">
@@ -118,7 +149,7 @@
 	                             	<div class="col-md-4">
 	                             		<div class="form-group">
 		                             		<label>EDUCATION</label>
-		                             		<input type="text" class="form-control" value="${empAllData.EDU_CODE}" readonly/>
+		                             		<input type="text" class="form-control" value="${edu_code}" readonly/>
 		                             	</div>
 	                             	</div>
 	                             	
@@ -225,14 +256,16 @@
 	                     </div>
 	                     <div class="content">
 	                         <div class="author">
-	                              <a href="#">
-	                             <img class="avatar border-gray" src="images/bootstrap/lisa2.jpg" alt="..."/>
+	                              <a href="">
+	                             	<img class="avatar border-gray" src="images/bootstrap/new_logo.png" alt="..."/>
 	
 	                               <h4 class="title">${empAllData.FRST_NM} ${empAllData.MDDL_NM} ${empAllData.LAST_NM }<br />
 	                                  <small>blank</small>
 	                               </h4>
 	                             </a>
 	                         </div>
+	                         <button type="button" class="btn btn-primary" id="employeeImage">employeeImage</button>                          
+	                         
 	                         <p class="description text-center"> "Lamborghini Mercy <br>
 	                                             Your chick she so thirsty <br>
 	                                             I'm in that two seat Lambo"
@@ -246,8 +279,10 @@
 	
 	                     </div>
 	                 </div>
-	             </div>
-	
+	                 <div class="personal">
+	                 	<img src="https://s3.amazonaws.com/beautymaster/${empAllData.SSN_NUM}" alt="personal" class="img-responsive"/>           	
+	                 </div>
+	             </div>	
 	         </div>
 	     </div>
 	 </div>

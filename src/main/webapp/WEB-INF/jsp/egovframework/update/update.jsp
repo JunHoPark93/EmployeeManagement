@@ -261,7 +261,7 @@
 										<div class="col-md-9 col-md-offset-1">
 											<div class="form-group">											
 												<lable>Street:</lable>
-												<input type="text" id="street-address" name="street_addrs" value="${empAllData.STREET_ADDRS} class="form-control">											
+												<input type="text" id="street-address" name="street_addrs" class="form-control" value="${empAllData.STREET_ADDRS}" >											
 											</div>
 										</div>
 									</div>
@@ -525,7 +525,7 @@
 												<div class="form-group">
 													<label class="control-label">Job Title</label> <input
 														class="form-control" type="text" name="job_title"
-														required="false" placeholder="ex: Manager" value="${empAllData.JOB_TITLE}"/>
+														placeholder="ex: Manager" value="${empAllData.JOB_TITLE}"/>
 												</div>
 											</div>
 											
@@ -549,14 +549,14 @@
 												<div class="form-group">
 													<label class="control-label">Start Date</label>
 													<input type="text" class="form-control " name="start_dt"
-													value="${empAllData.START_DT}" placeholder="Date Picker Here" readonly/>
+													value="${empAllData.START_DT}" placeholder="Date Picker Here" />
 												</div>
 											</div>
 											<div class="col-md-4">
 												<div class="form-group">
 													<label class="control-label">End Date</label>
 													<input type="text" class="form-control " name="end_dt" 
-													value="${empAllData.END_DT}" placeholder="Date Picker Here" readonly/>
+													value="${empAllData.END_DT}" placeholder="Date Picker Here" />
 												</div>
 											</div>
 										</div>
