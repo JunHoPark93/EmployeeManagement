@@ -35,6 +35,30 @@
 	</select>
 	
 	<select id="getOnesAllData" parameterType="String" resultType="Map">
+	
+		SELECT * FROM 
+	
+		T_EMPLOYEE AS a
+		
+		INNER JOIN T_EDUCATION AS b
+		
+		ON a.SSN_NUM  = b.SSN_NUM
+	
+		INNER JOIN T_WORK_HIST AS c
+		
+		ON a.SSN_NUM = c.SSN_NUM
+		
+	    where exists (select * from T_WORK_HIST where ssn_num = #{_parameter})
+	
+	
+		<if test='_parameter != null'>
+			and a.SSN_NUM = #{_parameter}; 
+		</if>
+			
+	</select>
+	
+	<select id="getOnesAllDataExceptWorkHistory" parameterType="String" resultType="Map">
+	
 		SELECT * FROM 
 		
 			T_EMPLOYEE AS a
@@ -43,14 +67,31 @@
 			
 			ON a.SSN_NUM  = b.SSN_NUM
 			
-			INNER JOIN T_WORK_HIST AS c
-			
-			ON a.SSN_NUM = c.SSN_NUM
-			
-			<if test='_parameter != null'>
-				WHERE a.SSN_NUM = #{_parameter}; 
-			</if>
-			
+		<if test='_parameter != null'>
+			and a.SSN_NUM = #{_parameter}; 
+		</if>
+	
 	</select>
+	
+	<select id="getAllQuitEmployeeData" parameterType="String" resultType="Map">
+	
+		SELECT * FROM
+			T_EMPLOYEE
+			
+		WHERE WORK_YN = "N"
+		
+	</select>
+	
+	<update id="deleteOneEmployeeData" parameterType="String">
+		UPDATE T_EMPLOYEE SET
+			WORK_YN = "N"
+		WHERE SSN_NUM = #{_parameter};
+	</update>
+	
+	<update id="revertOneEmployeeData" parameterType="String">
+		UPDATE T_EMPLOYEE SET
+			WORK_YN = "Y"
+		WHERE SSN_NUM = #{parameter};
+	</update>
 
 </mapper>

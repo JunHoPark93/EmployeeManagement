@@ -22,6 +22,7 @@
 		  , WORK_STYLE
 		  , ADULT_YN
 		  , SKILLS
+		  , WORK_START_DT
 		  , REGI_NM
 		  , MODI_NM
 		  , WORK_YN)
@@ -43,7 +44,8 @@
 		  , "${work_style}"
 		  , "${adult_yn}"
 		  , "${skills}"
-		  , "Jay", 
+		  , "${work_start_dt}"
+		  , "${regi_nm}", 
 		  "null", 
 		  "Y" )				  
 
@@ -70,7 +72,7 @@
 			"${school_nm}",
 			"${major}",
 			"${grade}",
-			"Jay",
+			"${regi_nm}",
 			"null"
 		)
 		
@@ -101,7 +103,7 @@
 			#{start_dt},
 			#{end_dt},
 			"${reason}",
-			"Jay",
+			"${regi_nm}",
 			"null"
 		);
 	</insert>
@@ -130,7 +132,7 @@
 			work_style = #{work_style},
 			adult_yn = #{adult_yn},
 			skills = #{skills},
-			modi_nm = "modiJay"		
+			modi_nm = #{regi_nm}		
 						
 		WHERE ssn_num = ${ssn_num}
 	</update>
@@ -142,7 +144,7 @@
 			school_nm = #{school_nm},
 			major = #{major},
 			grade = #{grade},
-			modi_nm = "modiJay"
+			modi_nm = #{regi_nm}
 			
 		WHERE ssn_num = ${ssn_num}
 	</update>	
@@ -152,9 +154,11 @@
 			emp_nm = #{emp_nm},
 			type = #{type},
 			job_title = #{job_title},
+			start_dt = #{start_dt},
+			end_dt = #{end_dt},
 			work = #{work},
 			reason = #{reason},
-			modi_nm = "modiJay"
+			modi_nm = #{regi_nm}
 						
 		WHERE ssn_num = ${ssn_num}
 	</update>
