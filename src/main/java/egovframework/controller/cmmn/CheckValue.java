@@ -125,6 +125,8 @@ public final class CheckValue {
 			return "4";
 		else if(edu.equals("Trade School"))
 			return "5";
+		else if(edu.equals("None"))
+			return "6";
 		else
 			return "9"; // error
 	}
@@ -140,6 +142,8 @@ public final class CheckValue {
 			return "Technical";
 		else if(edu.equals("5"))
 			return "Trade School";
+		else if(edu.equals("6"))
+			return "None";
 		else
 			return "9"; // error
 	}
