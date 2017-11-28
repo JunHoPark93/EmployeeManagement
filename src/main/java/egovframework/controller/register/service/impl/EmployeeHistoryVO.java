@@ -12,13 +12,15 @@ public class EmployeeHistoryVO {
 	private Date end_dt;
 	private String work;
 	private String reason;
+	
+	private String regi_nm;
 
 	public EmployeeHistoryVO() {
 		
 	}
 
 	public EmployeeHistoryVO(String ssn_num, String emp_nm, String type, String job_title, Date start_dt, Date end_dt,
-			String work, String reason) {
+			String work, String reason, String regi_nm) {
 		super();
 		this.ssn_num = ssn_num;
 		this.emp_nm = emp_nm;
@@ -28,6 +30,7 @@ public class EmployeeHistoryVO {
 		this.end_dt = end_dt;
 		this.work = work;
 		this.reason = reason;
+		this.regi_nm = regi_nm;
 	}
 
 	public String getSsn_num() {
@@ -92,6 +95,14 @@ public class EmployeeHistoryVO {
 
 	public void setReason(String reason) {
 		this.reason = reason;
+	}
+
+	public String getRegi_nm() {
+		return regi_nm;
+	}
+
+	public void setRegi_nm(String regi_nm) {
+		this.regi_nm = regi_nm;
 	}
 
 	@Override

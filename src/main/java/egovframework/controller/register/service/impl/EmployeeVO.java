@@ -32,11 +32,22 @@ public class EmployeeVO {
 	private String related_yn;
 	private String skills;
 	
+	private String regi_nm;
+	
+	public String getRegi_nm() {
+		return regi_nm;
+	}
+
+	public void setRegi_nm(String regi_nm) {
+		this.regi_nm = regi_nm;
+	}
+
 	public EmployeeVO() {}
 
 	public EmployeeVO(String ssn_num, String last_nm, String frst_nm, String mddl_nm, String street_addrs, String city,
 			String state, String zipcode, String home_tel, String cel_tel, String e_mail, Date work_start_dt,
-			String position, String location, String work_style, String adult_yn, String related_yn, String skills) {
+			String position, String location, String work_style, String adult_yn, String related_yn, String skills,
+			String regi_nm) {
 		super();
 		this.ssn_num = ssn_num;
 		this.last_nm = last_nm;
@@ -56,6 +67,7 @@ public class EmployeeVO {
 		this.adult_yn = adult_yn;
 		this.related_yn = related_yn;
 		this.skills = skills;
+		this.regi_nm = regi_nm;
 	}
 
 	public String getSsn_num() {

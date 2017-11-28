@@ -9,10 +9,12 @@ public class EmployeeEducationVO {
 	private String major;
 	private String grade;
 	
+	private String regi_nm;
+	
 	public EmployeeEducationVO() {}
 
 	public EmployeeEducationVO(String ssn_num, String school_nm, String high_yn, String edu_code, String major,
-			String grade) {
+			String grade, String regi_nm) {
 		super();
 		this.ssn_num = ssn_num;
 		this.school_nm = school_nm;
@@ -20,7 +22,10 @@ public class EmployeeEducationVO {
 		this.edu_code = edu_code;
 		this.major = major;
 		this.grade = grade;
+		this.regi_nm = regi_nm;
 	}
+
+
 
 	public String getSsn_num() {
 		return ssn_num;
@@ -68,6 +73,14 @@ public class EmployeeEducationVO {
 
 	public void setGrade(String grade) {
 		this.grade = grade;
+	}
+
+	public String getRegi_nm() {
+		return regi_nm;
+	}
+
+	public void setRegi_nm(String regi_nm) {
+		this.regi_nm = regi_nm;
 	}
 
 	@Override
