@@ -26,4 +26,24 @@ public class SelectServiceImpl extends EgovAbstractServiceImpl implements Select
 		return selectMapper.getOnesAllData(ssn_num);
 	}
 
+	@Override
+	public Map getOnesAllDataExceptWorkHistory(String ssn_num) throws Exception {
+		return selectMapper.getOnesAllDataExceptWorkHistory(ssn_num);
+	}
+
+	@Override
+	public List<Map> getAllQuitEmployeeData() throws Exception {
+		return selectMapper.getAllQuitEmployeeData();
+	}
+
+	@Override
+	public void deleteOneEmployeeData(String ssn_num) throws Exception {
+		selectMapper.deleteOneEmployeeData(ssn_num);
+	}
+
+	@Override
+	public void revertOneEmployeeData(String ssn_num) throws Exception {
+		selectMapper.revertOneEmployeeData(ssn_num);
+	}
+
 }
