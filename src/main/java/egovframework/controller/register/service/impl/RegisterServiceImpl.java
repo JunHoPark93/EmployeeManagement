@@ -39,23 +39,26 @@ public class RegisterServiceImpl extends EgovAbstractServiceImpl implements Regi
 	public void insertDataTx(EmployeeVO employeeVO, EmployeeEducationVO employeeEducationVO
 			,EmployeeHistoryVO employeeHistoryVO) throws Exception {
 		
+		System.out.println("empoloyeejhistory : "  +employeeHistoryVO.toString());
 		// transaction applied
 		registerMapper.insertEmployee(employeeVO);
 		registerMapper.insertEmployeeEducation(employeeEducationVO); 
-		//registerMapper.insertEmployeeHistory(employeeHistoryVO);
+		registerMapper.insertEmployeeHistory(employeeHistoryVO);
 
 		
 		System.out.println("insertDataTx");
-		try {
+		/*try {
 			if(employeeHistoryVO.getEmp_nm() != null &&  employeeHistoryVO.getType() != null 
 					&& employeeHistoryVO.getJob_title() != null) {
 				System.out.println("work histroy ok");
+				registerMapper.insertEmployeeHistory(employeeHistoryVO);
+			} else {
 				registerMapper.insertEmployeeHistory(employeeHistoryVO);
 			}
 		} catch(Exception e) {
 			System.out.println("insertDataTx Exception");
 			e.printStackTrace();
-		}
+		}*/
 	}
 
 	@Override
